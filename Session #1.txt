@@ -206,7 +206,7 @@ CPU|Memory|Device
     $ rm file[1-3]
 
     - read the contents of a text file one page(one screen) at a time. It has faster access because if file is large it doesn’t access the complete file, but accesses it page by page
-    $less command
+    $ less command
 
 
 
