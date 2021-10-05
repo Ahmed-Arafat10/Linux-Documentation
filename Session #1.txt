@@ -77,7 +77,7 @@ CPU|Memory|Device
     but in previous Dir.
     $ mkdir cd ../Test1
 
-    cd Downloads  -> means ./Download means from cur. Dir. do to Dowload
+    cd Downloads  -> means ./Download means from cur. Dir. go to Dowload
 
     - Open manual for specific command
     $ man <Command>
