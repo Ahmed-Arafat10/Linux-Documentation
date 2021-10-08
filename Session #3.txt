@@ -201,7 +201,7 @@ Initialization Files :
 
 
 --------------------------
-Linux Package Manager (apt) : Just goole program you want ti download
+Linux Package Manager (apt) : Just goole program you want to download
 --------------------------
 
 $ sudo apt policy git
