@@ -30,7 +30,7 @@ Note: an process that ends with [d] means its a background one
 
 - Background process = Daemons Process
 
--When a process create another process, first one is called parent
+- When a process create another process, first one is called parent
 while created one is called child
 
 
