@@ -77,9 +77,12 @@ option {Called signals} may be : -15 : softkill (terminal) {if no other process 
                                  -18 : Resume a process
 
 EX:       
-      
-      kill -9 1272
-   pkill -9 sleep -> will terminate all sleep process in system
+    
+    kill -9 1272
+    
+   - Terminate all sleep process in system {pkill}
+    
+    pkill -9 sleep
 
 
 - Show all processes running in background only (when you used [&] in command)
