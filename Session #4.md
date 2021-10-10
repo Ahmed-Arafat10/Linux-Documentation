@@ -71,11 +71,11 @@ Note: to terminate a running command (like $ sleep 1000) use:
 
        
       kill -option <ProcessID>
-option {Called signals} may be : <\br>
--15 : softkill (terminal) {if no other process depends on it}
--9 : hardkill, used when [-15] is not working {Force}
--19 : stop a process (as Ctrl + z)
--18 : Resume a process
+option {Called signals} may be :
+. -15 : softkill (terminal) {if no other process depends on it}
+. -9 : hardkill, used when [-15] is not working {Force}
+. -19 : stop a process (as Ctrl + z)
+. -18 : Resume a process
 
 EX:       
     
