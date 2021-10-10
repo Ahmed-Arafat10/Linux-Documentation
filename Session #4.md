@@ -14,7 +14,7 @@
 
       sudo chown arafat:roo7 file.txt
 
-Note: Its importance appears in system  2 course, not in here
+Note: Its importance appears in system  2 course, not here
 
 
 
