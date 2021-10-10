@@ -37,26 +37,30 @@ while created one is called child
 
 
 - Show all processes running in the system
-$ ps -ef
+       
+      ps -ef
 
 O/P: UID|PID|PPID
       x   y   z
 
-    UID -> User who created this process
-    PID -> Process ID
-    PPID -> Parent process {who created it}
+   UID -> User who created this process
+   PID -> Process ID
+   PPID -> Parent process {who created it}
 
 
 
 - Show processes that are created by specific user
-$ ps -u <Username {OR} UserID>
+       
+      ps -u <Username {OR} UserID>
 
 - To make terminal sleep for [n] seconds {no command will be executed at this time}
 $ sleep n
-EX: $ sleep 5
+       
+       sleep 5
 
 - Start a process in Background
-$ sleep 1000 &
+       
+      sleep 1000 &
 -> [&] sign
 
 Note: to terminate a running command (like $ sleep 1000) use:
@@ -64,14 +68,17 @@ Note: to terminate a running command (like $ sleep 1000) use:
     Ctrl + z --> It stops process {pause}
 
 
-$ kill -option <ProcessID>
+       
+      kill -option <ProcessID>
 option {Called signals} may be : -15 : softkill (terminal) {if no other process depends on it}
                                  -9 : hardkill, used when [-15] is not working {Force}
                                  -19 : stop a process (as Ctrl + z)
                                  -18 : Resume a process
 
-EX: $ kill -9 1272
-    $ pkill -9 sleep -> will terminate all sleep process in system
+EX:       
+      
+      kill -9 1272
+   pkill -9 sleep -> will terminate all sleep process in system
 
 
 - Show all processes running in background only (when you used [&] in command)
@@ -79,15 +86,18 @@ $ jobs
 O/P : [1] + Running sleep 1000 &
 
 - Transfer a process from background to foreground
-$ fg %n
+       
+      fg %n
 EX: fg %1    -> Number [1] is in Line #77
 
 - Resume a process
-$ kill -18 1633
+       
+      kill -18 1633
 
 
 - Search for a specific process bt its name {like $ grip command}
-$ pgrep -x -u 1000 -l docker
+       
+      pgrep -x -u 1000 -l docker
 -> -x : Search for an exact name { docker != dockermanager}
 -> -u : Search for a process with its UserID who created it
 -> -l : print PID + Process Name
@@ -100,16 +110,21 @@ Linux Services :
 waiting to be used
 
 - Show services in system
-$ systemctl
+       
+      systemctl
 -> You can use it to show/stop/start a service
  {OR}
- $ service <ServiceName> <Action>
-
-$ sudo systemctl status docker
-$ sudo systemctl stop docker
-$ sudo systemctl start docker
+       
+       service <ServiceName> <Action>
+       
+      sudo systemctl status docker
+       
+      sudo systemctl stop docker
+       
+      sudo systemctl start docker
 - Enable/Disable auto start of a service when system boots
-$ sudo systemctl enable/disable docker
+       
+      sudo systemctl enable/disable docker
 
 
 ----------------------------
@@ -136,7 +151,8 @@ Inodes are mapped to particular files
 associated with the Inode, those names are referred to as {Hard Links}
 
 - To know Inode Number of a File/Directory
-$ ls -id/-i <Filename/DirName>
+       
+      ls -id/-i <Filename/DirName>
 -> -id : For a Directory
 -> -i : For a File
 
@@ -144,21 +160,24 @@ $ ls -id/-i <Filename/DirName>
 -> Soft link (Symbolic) is like shortcut in windows
 
 - Create a Soft Link
-$ ln -s file1.txt softlink_file1.txt
+       
+      ln -s file1.txt softlink_file1.txt
 -> ln : stands for links
 -> -s : for softlink
 
 Note: Inode Number of [file1.txt] != [softlink_file1.txt]
 
 
-$ ls -l softlink.txt
+       
+      ls -l softlink.txt
 O/P -> L rwx|rwx|rwx
         -> [L] for link
 
 - If main file is deleted then softlink file become useless
 
 - Create Hard Link
-$ ln file2.txt hardlink_file2.txt
+       
+      ln file2.txt hardlink_file2.txt
 
 Note: Inode Number of [file2.txt] != [hardlink_file2.txt]
       also Hardlinks used to backup files
@@ -181,7 +200,8 @@ Note : - You cannot use hardlink across partitions because each partition
 has its own Inode table
 - You cannot make a hard link for a Directory
 - To get information about Inode of your partition
-$ df -i <FileSystem>
+       
+      df -i <FileSystem>
 EX: $ df -i /dev/sdu5
 
 
@@ -192,9 +212,11 @@ File System Management :
 - We use {fdisk} utiltiy to manage file system, like creating or deleting
 a partition
 - To list your partitions and storage disks informations
-$ sudo fdisk -l
+       
+      sudo fdisk -l
     {OR}
-$ df -h
+       
+      df -h
 
 - Modify a partition
 $ sudo fdisk -option <DiskName>
