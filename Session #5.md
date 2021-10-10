@@ -335,7 +335,7 @@ arg1
 ```
 
 ```
-$ i=5
+$ i=5                          O/P
 $ echo $i                       5
 $ i=$i+1; echo $i              5+1
 $ let i=$i+2
