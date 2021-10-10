@@ -44,7 +44,7 @@ sed 'Command' FileName
 ``` 
 sed '/root/p' myfile
 ```
-> word is put inside backward slashes [/word/]
+> word is put inside backward slashes [/word/] <br>
 > p -> For Printing the line that contains word
 
 
