@@ -301,7 +301,8 @@ Compression :
        
       gzip Dir1 (X) -> Cannot make a compressed Directory
 
-       
+ -> Create a zipped & compressed file   
+      
       tar -cfz file.tar.gz dir7 file2.txt
 -> -z : stands for zip
 
