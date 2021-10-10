@@ -99,7 +99,7 @@ sed '/^Hello/d' Myfile
 ```
 sed '/Hello/d;/^Hello/q' /etc/password
 ```
-> [;] : for more than one command
+> [;] : for more than one command <br/>
 > q : to quite
 > Note: not working with him
 
@@ -232,8 +232,8 @@ if(expression1){statement1:statement2}
 else if(expression2) {statement1:statement2}
 else {statement1;}
 ```
-Operators: <  <= == != >= > ~  !~
-~ -> Match a regular expression
+Operators: <  <= == != >= > ~  !~ <br/>
+~ -> Match a regular expression <br/>
 !~ -> Not match a regular expression
 
 
@@ -271,7 +271,7 @@ awk '{ if(NR == 4 || NR == 5) print NR ":" $0}' /etc/passwd
 Shell Script :
 -------------
 
-Standard Shells :
+- Standard Shells :
     1) Bourne shell (sh)
     2) C shell (csh)
     3) korn shell (ksh)
@@ -279,14 +279,14 @@ Standard Shells :
 - Shell program is a combination of Unix commands + programming constructions and comments
 - To execute the script use [$ chmod] command to turn on the execute permission for current user
 
--> First line starts with-> #! /bin/bash
--> Comment -> # Calculating x
+-> First line starts with-> ```  #! /bin/bash  ```
+-> Comment ->``` # Calculating x ```
 -> Extension of it is [.sh]
 -> $ nano day5.sh
 -> To run the script use:
-    1) ./days.sh
-    2) source dat5.sh {this method is better}
-> Note: ny file by default does not have execute permissions, so we have first to [$ chmod] command
+    1) ``` ./days.sh```
+    2) ```source dat5.sh``` {this method is better}
+> Note: any file by default does not have execute permissions, so we have first to [$ chmod] command
 ```
 chmod u+x day5.sh
 ```
@@ -304,19 +304,19 @@ export PATH = $PATH:/home/arafat/bash.script
 
 Variables:
 ----------
-- Local Variables -> ```x=foo:echo $x```
+- Local Variables -> ```x=foo;echo $x```
 > Note: x = foo is wrong {NO SPACES}
-- Environment Variables -> ```export y=bat: echo $y```
+- Environment Variables -> ```export y=bat; echo $y```
 - Predefined variables -> Defined already in bash script
 
- ```echo $? ``` -> output of last command [0/1]
-0 is for true {as ant c program return 0: when executed successfully}
+ ```echo $? ``` -> output of last command [0/1] <br>
+0 is for true {as ant c program return 0: when executed successfully} <br>
 1 is false
 
-```$#``` -> Number of argument
-```$*``` -> list all arguments
-```$1,$2 ,...``` -> first,second argument
-```$0``` -> script name
+```$#``` -> Number of argument  <br>
+```$*``` -> list all arguments  <br>
+```$1,$2 ,...``` -> first,second argument  <br>
+```$0``` -> script name  <br>
 
 EX: inside script.sh file
 ```
