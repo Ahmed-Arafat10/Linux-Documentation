@@ -279,11 +279,11 @@ Shell Script :
 - Shell program is a combination of Unix commands + programming constructions and comments
 - To execute the script use [$ chmod] command to turn on the execute permission for current user
 
--> First line starts with-> ```  #! /bin/bash  ```
--> Comment ->``` # Calculating x ```
--> Extension of it is [.sh]
--> $ nano day5.sh
--> To run the script use:
+-> First line starts with-> ```  #! /bin/bash  ``` <br>
+-> Comment ->``` # Calculating x ```  <br>
+-> Extension of it is [.sh]  <br>
+-> $ nano day5.sh  <br>
+- To run the script use:
     1) ``` ./days.sh```
     2) ```source dat5.sh``` {this method is better}
 > Note: any file by default does not have execute permissions, so we have first to [$ chmod] command
