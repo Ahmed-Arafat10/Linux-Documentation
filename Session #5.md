@@ -48,7 +48,7 @@ sed '/root/p' myfile
 > p -> For Printing the line that contains word
 
 
-1- Prevent default behaviour of Sed to print each line
+- Prevent default behaviour of Sed to print each line
 ```
 sed -n '/root/p' myfile
 ``` 
