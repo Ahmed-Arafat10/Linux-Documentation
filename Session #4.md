@@ -140,16 +140,16 @@ Inode & Softlink & Hardlink :
 Inodes are mapped to particular files
 - Linux stores administrative data about files in nodes
 - Information stored in the Inode table are : 
-- Size
-- DeviceID
-- UID
-- GID
-- Mode
-- Time Stamp
-- pointer to date
-- type of file
-- file permission
-- Number of hard links
+1) Size
+2) DeviceID
+3) UID
+4) GID
+5) Mode
+6) Time Stamp
+7) pointer to date
+8) type of file
+9) file permission
+10) Number of hard links
 
 - Inode tables do not contains filename of its content
 - Names are stored in the Directory
