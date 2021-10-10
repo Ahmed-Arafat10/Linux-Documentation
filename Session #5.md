@@ -36,16 +36,22 @@ Addressing format can be:
 
 
 - Sed command format
-```sed 'Command' FileName```
+```
+sed 'Command' FileName
+```
 
 - Print lines that contains word "root"
-``` sed '/root/p' myfile ```
+``` 
+sed '/root/p' myfile
+```
 > word is put inside backward slashes [/word/]
 > p -> For Printing the line that contains word
 
 
 1- Prevent default behaviour of Sed to print each line
-``` sed -n '/root/p' myfile ``` 
+```
+sed -n '/root/p' myfile
+``` 
  > -n : a flag
 
 
@@ -55,8 +61,9 @@ $ sed -n '1p' /etc/password
 ```
 
 - Print range form Line #1 to Line #10
+ ```
 $ sed -n '1,10p' /etc/password
-
+```
 
 - Print form line that contains word "games" to line that contains word "root"
 $ sed -n '/games/,/root/p' /etc/password
