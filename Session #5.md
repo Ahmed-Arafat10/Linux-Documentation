@@ -60,17 +60,17 @@ sed -n '/root/p' myfile
 sed -n '1p' /etc/password
 ```
 
-- Print range form Line #1 to Line #10
+- Print range from Line #1 to Line #10
  ```
 sed -n '1,10p' /etc/password
 ```
 
-- Print form line that contains word "games" to line that contains word "root"
+- Print from Line that contains word "games" to line that contains word "root"
 ```
 sed -n '/games/,/root/p' /etc/password
 ```
 
-- Print all lines except Line #3
+- Print all Lines except Line #3
 ```
 sed -n '3!p' Myfile
 ```
@@ -85,17 +85,17 @@ sed '3d' Myfile
 sed -n '3d' Myfile
 ```
 
-- Delete all lines that contain word "Hello"
+- Delete all Lines that contain word "Hello"
 ```
 sed '/Hello/d' Myfile
 ```
 
-- Delete all lines that starts with word "Hello"
+- Delete all Lines that starts with word "Hello"
 ```
 sed '/^Hello/d' Myfile
 ```
 
-- Delete all lines that contain word "Hello" and then quite
+- Delete all Lines that contain word "Hello" and then quite
 ```
 sed '/Hello/d;/^Hello/q' /etc/password
 ```
@@ -104,7 +104,7 @@ sed '/Hello/d;/^Hello/q' /etc/password
 > Note: not working with him
 
 
-- Delete all lines that ends with word "Hello"
+- Delete all Lines that ends with word "Hello"
 ```
 sed '/Hello$/d' File2.txt
 ```
