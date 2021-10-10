@@ -1,20 +1,19 @@
-===========
-Session #5
-===========
+# Session #5
 
 
----------------------
-System Administration
----------------------
 
 
-------------
+## System Administration
+
+
+
+
 Sed utility :
 ------------
 
-- Sed stamds for streamline aditor
+- Sed stands for streamline editor
 
-- It doesnt change your file unless the output is saved with shell redirection by default
+- It does not change your file unless the output is saved with shell redirection by default
 
 - Sed editor process a file (input)one line at a time and sens output to the screen
 
@@ -23,30 +22,33 @@ is sent to the screen (unless command wad to delete the line) and the next line 
 and the process is repeated until the last line is reached
 
 Addressing :
------------- Its used to determine whcij lines to be ecited
+------------
+- Its used to determine whcih lines to be edited
 Addressing format can be:
 1) Number
-2) Regular Experssion
+2) Regular Expression
 3) Both
 
--Sed command tekks sed what tod o with line wether:
+- Sed command tells sed what to do with line whether:
 1) Print it
 2) Remove it
 3) Change it
 
 
-- sed command format
-$ sed 'Command' FileName
+- Sed command format
+
+      sed 'Command' FileName
 
 
 - Print lines that contains word "root"
-$ sed '/root/p' myfile
--> word is put inside backword slashes [/word/]
--> p -> For Printing the line that contains word
+
+      sed '/root/p' myfile
+* word is put inside backward slashes [/word/]
+* p -> For Printing the line that contains word
 
 
-- Prevent default behaviour of sed to print each line
-$ sed -n '/root/p' myfile
+- Prevent default behaviour of Sed to print each line
+> `sed -n '/root/p' myfile`
 -> -n : a flag
 
 
@@ -58,7 +60,7 @@ $ sed -n '1p' /etc/password
 $ sed -n '1,10p' /etc/password
 
 
-- Print form line that containe word "games" to line that containe word "root"
+- Print form line that contains word "games" to line that contains word "root"
 $ sed -n '/games/,/root/p' /etc/password
 
 
@@ -66,7 +68,7 @@ $ sed -n '/games/,/root/p' /etc/password
 $ sed -n '3!p' Myfile
 
 
-- Delete Line #3 {Just in termianl not actual file}
+- Delete Line #3 {Just in terminal not actual file}
 $ sed '3d' Myfile
 
 
@@ -96,32 +98,32 @@ $ sed '/Hello$/d' File2.txt
 - To save file with new edit
 $ sed -i '/^Hello/d' File2.txt
 
-Note: Not recommended to use it, as you deal with senstive files like passwd,so
-save yout canges in another file {redirection}
+Note: Not recommended to use it, as you deal with sensitive files like passwd,
+so save your changes in another file {redirection}
 $ sed -i '/^Hello/d' File2.txt > File2_Temp.txt
 
 
 - To edit a pattern using sed, this command will change every "everybody" word
 to "everyone"
-$ sed 's/everbody/everyone' Myfile2
--> s: statnds for subistitute
+$ sed 's/everybody/everyone' Myfile2
+-> s: stands for substitute
 
-- If there are two "everybody" in the same line {ex: .... everbody .... everbody}
+- If there are two "everybody" in the same line {ex: .... everybody .... everybody}
 its going to just change first word and then break to next line without changing
 other word in same line, to fix this
-$ sed 's/everbody/everyone/g' Myfile2
+$ sed 's/everybody/everyone/g' Myfile2
 -> g: stands for global
 
 
 - To print lines that are changed
-$ sed -n 's/everbody/everyone/gp' Myfile2
+$ sed -n 's/everybody/everyone/gp' Myfile2
 -> p : for print
 
 
 - To delete from line #3 till the end
 $ sed '3,$d' Myfile
 
-- To make two sed command in one line, this command will print from line #1
+- To make two Sed command in one line, this command will print from line #1
 to line #3, then from line #6 to line #7
 
 $ sed -n -e '1,3p' -e '6,7p' Myfile
@@ -132,9 +134,9 @@ $ sed -n -e '1,3p' -e '6,7p' Myfile
 AWK Utility :
 ------------
 
-- Named AWK for fisrt letter of nameds of the three developer og it
-- its a programming language used for maipultaing data and generating reports
-- AWK scans a file line by line, search for lines that match a specific patterna
+- Named AWK for first letter of name of the three developer of it
+- its a programming language used for manipulating data and generating reports
+- AWK scans a file line by line, search for lines that match a specific patterns
 and then performing selected action
 
 
@@ -143,8 +145,8 @@ $ awk 'Instructions' FileName
 
 - In Awk, Line = Record
 
-Important varibles:
-    1) FS -> you cna control field separator {default iis space but you can change it to
+Important variables:
+    1) FS -> you can control field separator {default is space but you can change it to
     colon [:] as in [/etc/passwd] }
     2) RS -> record separator which is '\n' by default
     3) $0 -> Means entire record {$1 for field #1 , $2 for field #2 , etc ...}
@@ -173,13 +175,13 @@ Important varibles:
      - Display each line + Number of fields for each one
     $ awk '{print $0,NF}' /etc/passwd
 
-    - BEGIN is executed one time beofre awk process any line from the input file
+    - BEGIN is executed one time before awk process any line from the input file
     - It determines first value of FS,RS variables
     $ awk 'BEGIN {FS = ":";RS="\n\n"} {print $0,NR}' 2-empty-spaces.txt
 
 
     - END is executed one time after awk process all lines of input file
-    - It dosent match any input line
+    - It does not match any input line
     $ awk 'END {print NR} {print NR}' myfile
 
 
@@ -221,38 +223,38 @@ Shell Script :
 -------------
 
 Standard Shells :
-    1) Bowne shell (sh)
+    1) Bourne shell (sh)
     2) C shell (csh)
     3) korn shell (ksh)
 
-- Shell program is a combination of unix commands + programming constructions and comments
+- Shell program is a combination of Unix commands + programming constructions and comments
 - To execute the script use [$ chmod] command to turn on the execute permission for current user
 
 -> First line starts with-> #! /bin/bash
 -> Comment -> # Calculating x
--> Extesion of it is [.sh]
+-> Extension of it is [.sh]
 -> $ nano day5.sh
 -> To run the script use:
     1) ./days.sh
     2) source dat5.sh {this method is better}
-Note any file by default doesnt have execute permissions, so we have firt to [$ chmod] command
+Note any file by default does not have execute permissions, so we have first to [$ chmod] command
 $ chmod u+x day5.sh
 
 
-Rememebr : $echo $path -> Shows all Directories that stores commands of linux, each time you enter a command
-tehn hitting enter button system check if the enterd command is exist in any file in these Directories
+Remember : $echo $path -> Shows all Directories that stores commands of Linux, each time you enter a command
+then hitting enter button system check if the entered command is exist in any file in these Directories
 
 - To make your script global {just enter his name and the press enter button}, use this command
 $ export PATH = $PATH:/home/arafat/bash.script
     ->[:] as field separator of file $PATH is [:]
-- To make this global to all terminals add commandto [~/.bashrc]
+- To make this global to all terminals add above command to [~/.bashrc]
 
 
 Variables:
 ----------
 - Local Variables -> x=foo:echo $x
 Note: x = foo is wrong {NO SPACES}
-- Enviroment Variables -> export y=bat: echo $y
+- Environment Variables -> export y=bat: echo $y
 - Predefined variables -> Defined already in bash script
 
  $ echo $? -> output of last command [0/1]
