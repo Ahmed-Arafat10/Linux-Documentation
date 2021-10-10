@@ -3,10 +3,12 @@
 ===============
 
 - To change the owner of a file
-$ sudo chown arafat file.txt
+       
+      sudo chown arafat file.txt
 
 - To change the group of a file
-$ sudo chown :root file.txt
+
+      sudo chown :root file.txt
 
 - To change both the owner and group of a file
 
