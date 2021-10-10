@@ -10,7 +10,8 @@ $ sudo chown arafat file.txt
 $ sudo chown :root file.txt
 
 - To change both the owner and group of a file
-$ sudo chown arafat:roo7 file.txt
+
+      sudo chown arafat:roo7 file.txt
 
 Note: Its importance appears in system  2 course, not in here
 
