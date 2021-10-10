@@ -29,7 +29,7 @@ Linux Processes :
 
 First process that starts on system called -> systemd with ID = 0
 
-Note: an process that ends with [d] means its a background one
+Note: a process that ends with [d] means its a background one
 
 - Background process = Daemons Process
 
