@@ -57,82 +57,102 @@ sed -n '/root/p' myfile
 
 - Print only Line #1
 ```
-$ sed -n '1p' /etc/password
+sed -n '1p' /etc/password
 ```
 
 - Print range form Line #1 to Line #10
  ```
-$ sed -n '1,10p' /etc/password
+sed -n '1,10p' /etc/password
 ```
 
 - Print form line that contains word "games" to line that contains word "root"
-$ sed -n '/games/,/root/p' /etc/password
-
+```
+sed -n '/games/,/root/p' /etc/password
+```
 
 - Print all lines except Line #3
-$ sed -n '3!p' Myfile
-
+```
+sed -n '3!p' Myfile
+```
 
 - Delete Line #3 {Just in terminal not actual file}
-$ sed '3d' Myfile
-
+```
+sed '3d' Myfile
+```
 
 - Nothing will be shown in terminal
-$ sed -n '3d' Myfile
-
+```
+sed -n '3d' Myfile
+```
 
 - Delete all lines that contain word "Hello"
-$ sed '/Hello/d' Myfile
-
+```
+sed '/Hello/d' Myfile
+```
 
 - Delete all lines that starts with word "Hello"
-$ sed '/^Hello/d' Myfile
-
+```
+sed '/^Hello/d' Myfile
+```
 
 - Delete all lines that contain word "Hello" and then quite
-$ sed '/Hello/d;/^Hello/q' /etc/password
--> [;] : for more than one command
--> q : to quite
-Note: not working with him
+```
+sed '/Hello/d;/^Hello/q' /etc/password
+```
+> [;] : for more than one command
+> q : to quite
+> Note: not working with him
 
 
 - Delete all lines that ends with word "Hello"
-$ sed '/Hello$/d' File2.txt
-
+```
+sed '/Hello$/d' File2.txt
+```
 
 - To save file with new edit
-$ sed -i '/^Hello/d' File2.txt
-
-Note: Not recommended to use it, as you deal with sensitive files like passwd,
+```
+sed -i '/^Hello/d' File2.txt
+```
+> Note: Not recommended to use it, as you deal with sensitive files like passwd,
 so save your changes in another file {redirection}
-$ sed -i '/^Hello/d' File2.txt > File2_Temp.txt
-
+```
+sed -i '/^Hello/d' File2.txt > File2_Temp.txt
+```
 
 - To edit a pattern using sed, this command will change every "everybody" word
 to "everyone"
-$ sed 's/everybody/everyone' Myfile2
--> s: stands for substitute
+```
+sed 's/everybody/everyone' Myfile2
+```
+> s: stands for substitute
 
 - If there are two "everybody" in the same line {ex: .... everybody .... everybody}
 its going to just change first word and then break to next line without changing
 other word in same line, to fix this
-$ sed 's/everybody/everyone/g' Myfile2
--> g: stands for global
+```
+sed 's/everybody/everyone/g' Myfile2
+```
+> g: stands for global
 
 
 - To print lines that are changed
-$ sed -n 's/everybody/everyone/gp' Myfile2
--> p : for print
+```
+sed -n 's/everybody/everyone/gp' Myfile2
+```
+> p : for print
 
 
 - To delete from line #3 till the end
-$ sed '3,$d' Myfile
+```
+sed '3,$d' Myfile
+```
 
 - To make two Sed command in one line, this command will print from line #1
 to line #3, then from line #6 to line #7
 
-$ sed -n -e '1,3p' -e '6,7p' Myfile
-
+```
+sed -n -e '1,3p' -e '6,7p' Myfile
+```
 
 
 ------------
@@ -146,7 +166,9 @@ and then performing selected action
 
 
 - Awk command format
-$ awk 'Instructions' FileName
+```
+awk 'Instructions' FileName
+```
 
 - In Awk, Line = Record
 
@@ -159,44 +181,57 @@ Important variables:
     5) NF -> Number of fields in a record {7 as in passwd}
 
 
-    - Print first field for each line
-    $ awk -f: '{print $1}' /etc/passwd
-    -> f: specify that field separator is [:]
+- Print first field for each line
+```
+awk -f: '{print $1}' /etc/passwd
+```
+> f: specify that field separator is [:]
 
 
-    - Print field 1,3 for each line
-    $ awk -f: '{print $1,$3}' /etc/passwd
+- Print field 1,3 for each line
+``` 
+awk -f: '{print $1,$3}' /etc/passwd
+```
 
-    - Print "Log name:" text with first field for each line
-    $ awk -f: '{print "Log name:",$1}' /etc/passwd
+- Print "Log name:" text with first field for each line
+```
+awk -f: '{print "Log name:",$1}' /etc/passwd
+```
+    
+- Display whole file {like $ cat}
+```
+awk '{print $0}' /etc/passwd
+```
 
-    - Display whole file {like $ cat}
-    $ awk '{print $0}' /etc/passwd
+- Display Number of each line along with line itself
+``` 
+awk '{print NR,$0}' /etc/passwd
+```
+   
+- Display each line + Number of fields for each one
+```
+awk '{print $0,NF}' /etc/passwd
+```
 
+- BEGIN is executed one time before awk process any line from the input file
+- It determines first value of FS,RS variables
+```
+awk 'BEGIN {FS = ":";RS="\n\n"} {print $0,NR}' 2-empty-spaces.txt
+```
 
-     - Display Number of each line along with line itself
-    $ awk '{print NR,$0}' /etc/passwd
-
-     - Display each line + Number of fields for each one
-    $ awk '{print $0,NF}' /etc/passwd
-
-    - BEGIN is executed one time before awk process any line from the input file
-    - It determines first value of FS,RS variables
-    $ awk 'BEGIN {FS = ":";RS="\n\n"} {print $0,NR}' 2-empty-spaces.txt
-
-
-    - END is executed one time after awk process all lines of input file
-    - It does not match any input line
-    $ awk 'END {print NR} {print NR}' myfile
-
+- END is executed one time after awk process all lines of input file
+- It does not match any input line
+```
+awk 'END {print NR} {print NR}' myfile
+```
 
 Conditional Expression :
 ------------------------
-
+```
 if(expression1){statement1:statement2}
 else if(expression2) {statement1:statement2}
 else {statement1;}
-
+```
 Operators: <  <= == != >= > ~  !~
 ~ -> Match a regular expression
 !~ -> Not match a regular expression
@@ -206,20 +241,29 @@ Loops:
 ------
 
 - While Loop
-$ awk -f: {i=1:while(i<NF){print NF,$i;i++}} /etc/passwd
+```
+awk -f: {i=1:while(i<NF){print NF,$i;i++}} /etc/passwd
+```
 
 - For Loop
-$ awk -f: {for(i=1;<NF;;i++){print NF,$i}} /etc/passwd
+```
+awk -f: {for(i=1;<NF;;i++){print NF,$i}} /etc/passwd
+```
 
 
-$ awk '{ if($1 > $2) max = $1:
+```
+awk '{ if($1 > $2) max = $1:
         else max = $2;
         print max}' texting.txt
+```
 
-$ awk '{ if($1 + $2 > 100) print $0 } 'Testing.txt
+```
+awk '{ if($1 + $2 > 100) print $0 } 'Testing.txt
+```
 
-$ awk '{ if(NR == 4 || NR == 5) print NR ":" $0}' /etc/passwd
-
+```
+awk '{ if(NR == 4 || NR == 5) print NR ":" $0}' /etc/passwd
+```
 
 
 
@@ -242,50 +286,55 @@ Standard Shells :
 -> To run the script use:
     1) ./days.sh
     2) source dat5.sh {this method is better}
-Note any file by default does not have execute permissions, so we have first to [$ chmod] command
-$ chmod u+x day5.sh
+> Note: ny file by default does not have execute permissions, so we have first to [$ chmod] command
+```
+chmod u+x day5.sh
+```
 
-
-Remember : $echo $path -> Shows all Directories that stores commands of Linux, each time you enter a command
+Remember : ```$echo $path``` -> Shows all Directories that stores commands of Linux, each time you enter a command
 then hitting enter button system check if the entered command is exist in any file in these Directories
 
 - To make your script global {just enter his name and the press enter button}, use this command
-$ export PATH = $PATH:/home/arafat/bash.script
-    ->[:] as field separator of file $PATH is [:]
-- To make this global to all terminals add above command to [~/.bashrc]
+```
+export PATH = $PATH:/home/arafat/bash.script
+```
+> [:] as field separator of file $PATH is [:]
+> To make this global to all terminals add above command to [~/.bashrc]
 
 
 Variables:
 ----------
-- Local Variables -> x=foo:echo $x
-Note: x = foo is wrong {NO SPACES}
-- Environment Variables -> export y=bat: echo $y
+- Local Variables -> ```x=foo:echo $x```
+> Note: x = foo is wrong {NO SPACES}
+- Environment Variables -> ```export y=bat: echo $y```
 - Predefined variables -> Defined already in bash script
 
- $ echo $? -> output of last command [0/1]
+ ```echo $? ``` -> output of last command [0/1]
 0 is for true {as ant c program return 0: when executed successfully}
 1 is false
 
-$# -> Number of argument
-$* -> list all arguments
-$1,$2 ,... -> first,second argument
-$0 -> script name
+```$#``` -> Number of argument
+```$*``` -> list all arguments
+```$1,$2 ,...``` -> first,second argument
+```$0``` -> script name
 
 EX: inside script.sh file
--------------------------
+```
 echo "script is $0"
 echo "Number of arguments are $#"
 echo "List arguments $*"
 echo "Argument 1 = $1"
---------------------------
-run : $ script.sh arg1 arg2 arg3
-O/P
-1) script.sh
-2) 3
-3) arg1 arg2 arg3
-4) arg1
+```
+> run : $ script.sh arg1 arg2 arg3
+- O/P:
+```
+script.sh
+3
+arg1 arg2 arg3
+arg1
+```
 
-
+```
 $ i=5
 $ echo $i                                           5
 $ i=$i+1; echo $i                                   5+1
@@ -294,3 +343,4 @@ $ echo $i                                           7
 $ typeset -i Num
 $ Num=5:echo $Num                                   5
 $ Num=$Num+5:echo $Num                              10
+```
