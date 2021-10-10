@@ -72,10 +72,10 @@ Note: to terminate a running command (like $ sleep 1000) use:
        
       kill -option <ProcessID>
 option {Called signals} may be :
-1) -15 : softkill (terminal) {if no other process depends on it}
-2) -9 : hardkill, used when [-15] is not working {Force}
-3) -19 : stop a process (as Ctrl + z)
-4) -18 : Resume a process
+- -15 : softkill (terminal) {if no other process depends on it}
+- -9 : hardkill, used when [-15] is not working {Force}
+- -19 : stop a process (as Ctrl + z)
+- -18 : Resume a process
 
 EX:       
     
@@ -139,16 +139,18 @@ Inode & Softlink & Hardlink :
 - Each file system (partition) has an Inode table, in which all of the used
 Inodes are mapped to particular files
 - Linux stores administrative data about files in nodes
-- Information stored in the Inode table are :  - Size
-                                               - DeviceID
-                                               - UID
-                                               - GID
-                                               - Mode
-                                               - Time Stamp
-                                               - pointer to date
-                                               - type of file
-                                               - file permission
-                                               - Number of hard links
+- Information stored in the Inode table are : 
+- Size
+- DeviceID
+- UID
+- GID
+- Mode
+- Time Stamp
+- pointer to date
+- type of file
+- file permission
+- Number of hard links
+
 - Inode tables do not contains filename of its content
 - Names are stored in the Directory
 - Each filename knows which Inode it has
