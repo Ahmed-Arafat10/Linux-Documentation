@@ -172,7 +172,7 @@ awk 'Instructions' FileName
 
 - In Awk, Line = Record
 
-Important variables:
+- Important variables:
     1) FS -> you can control field separator {default is space but you can change it to
     colon [:] as in [/etc/passwd] }
     2) RS -> record separator which is '\n' by default
