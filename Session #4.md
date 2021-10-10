@@ -95,7 +95,7 @@ EX: fg %1    -> Number [1] is in Line #77
       kill -18 1633
 
 
-- Search for a specific process bt its name {like $ grip command}
+- Search for a specific process by its name {like $ grip command}
        
       pgrep -x -u 1000 -l docker
 -> -x : Search for an exact name { docker != dockermanager}
@@ -219,7 +219,8 @@ a partition
       df -h
 
 - Modify a partition
-$ sudo fdisk -option <DiskName>
+       
+      sudo fdisk -option <DiskName>
 option is for: -m -> View help
           -d -> Delete a partition
           -l -> List known partition types
@@ -233,14 +234,17 @@ EX: $ sudo fdisk -l /dev/sdu
 - Then run $ partprobe
 
 - To format the newly created partition
-$ mkfs -t ext4 /dev/sdu3
+       
+      mkfs -t ext4 /dev/sdu3
 -> ext4 : type of partition
 
 - Create a mount point for the partition
-$ mkdir /my_partition
+       
+      mkdir /my_partition
 
 - Mount newly created partition
-$ mount /dev/sdu3 /my_partition
+       
+      mount /dev/sdu3 /my_partition
 
 
 -------------------------
@@ -250,7 +254,8 @@ Archiving & Compression :
 - The {tar} command archive files to and extract files from a single
 file called a tar file
 
-$ tar -option <ArchiveName> file1,file2,...
+       
+      tar -option <ArchiveName> file1,file2,...
 option is for: -c -> Create a new tar file {archiving}
                -t -> List table of content of a tar file
                -x -> Extracts files from the tar command
@@ -258,21 +263,27 @@ option is for: -c -> Create a new tar file {archiving}
                -v -> Verbase mode {more information}
 
 - Create a tar file{archive}
-$ tar -cf archive.tar file1
+       
+      tar -cf archive.tar file1
 -Show files in an archive file
-$ tar -tf archive.tar file1
+       
+      tar -tf archive.tar file1
 
 - To extract files
-$ tar -xf archive.tar
+       
+      tar -xf archive.tar
 
 - To extract files in another path
-$ tar -xf archive.tar -C /home/arafat/Documents
+       
+      tar -xf archive.tar -C /home/arafat/Documents
 {OR} just execute command in this path
 
 
 
-Note: touch file1; mkdir Dir1
-        {OR}
+Note:        
+      
+      touch file1; mkdir Dir1
+   {OR}
       touch file1 && mkdir Dir1
 -> To execute more than one command in the same line, but for [&&] sign
 if the first command have an error second one wont be executed {like Programming}
@@ -283,18 +294,23 @@ Compression :
 ------------
 
 - To compress a file
-$ gzip file1
+       
+      gzip file1
 -> File will be taken to create zip file {file will disappear}
 
-$ gzip Dir1 (X) -> Cannot make a compressed Directory
+       
+      gzip Dir1 (X) -> Cannot make a compressed Directory
 
-$ tar -cfz file.tar.gz dir7 file2.txt
+       
+      tar -cfz file.tar.gz dir7 file2.txt
 -> -z : stands for zip
 
 
 - Unzip a zipped file
-$ gunzip file.tar.gz
+       
+      gunzip file.tar.gz
 -> Then file will become file.tar {use again $ tar -fx command}
 
 - To make them just in one step
-$ tar -xf file.tar.gz
+       
+      tar -xf file.tar.gz
