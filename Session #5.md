@@ -228,9 +228,9 @@ awk 'END {print NR} {print NR}' myfile
 Conditional Expression :
 ------------------------
 ```
-if(expression1){statement1:statement2}
-else if(expression2) {statement1:statement2}
-else {statement1;}
+if(expression1) {statement1;statement2}
+else if(expression2) {statement1;statement2}
+else {statement1}
 ```
 Operators: <  <= == != >= > ~  !~ <br/>
 ~ -> Match a regular expression <br/>
