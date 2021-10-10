@@ -2,7 +2,7 @@
 **Session #4**
 ===============
 
-+ To change the owner of a file
+- To change the owner of a file
        
       sudo chown arafat file.txt
 
