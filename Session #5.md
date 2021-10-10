@@ -336,11 +336,11 @@ arg1
 
 ```
 $ i=5
-$ echo $i                                           5
-$ i=$i+1; echo $i                                   5+1
+$ echo $i                       5
+$ i=$i+1; echo $i              5+1
 $ let i=$i+2
-$ echo $i                                           7
+$ echo $i                       7
 $ typeset -i Num
-$ Num=5:echo $Num                                   5
-$ Num=$Num+5:echo $Num                              10
+$ Num=5:echo $Num               5
+$ Num=$Num+5:echo $Num          10
 ```
