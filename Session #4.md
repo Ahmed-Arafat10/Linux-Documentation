@@ -23,7 +23,7 @@ Linux Processes :
 ----------------
 
 - Process has an ID which consists of up to 5 digits
-- Processes have two types: 1) Foreground : must be finished before user could use terminal {ex: [ls]}
+- Processes have two types: 1) Foreground : must be finished before user could use terminal {ex: [ls]}\n
                             2) Background : allow user to continue to use the terminal
 
 First process that starts on system called -> systemd with ID = 0
