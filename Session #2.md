@@ -114,155 +114,236 @@ ls /etc | grep passwd
 - Its like executing first command and save it's output in file instead of showing in in terminal
             then passing this file to second command after pipe character [|]
 
-$ sudo ls -R / | grep shadow
-            -> -R / Means to show all files/Dir. inside root [/] and also inside each Dir.
-            show its files/Dir and so on, so it outputs all files/Dir. in OS
-    -> sudo : means {super user do}
+```
+sudo ls -R / | grep shadow
+```
+> -R / Means to show all files/Dir. inside root [/] and also inside each Dir.
+show its files/Dir and so on, so it outputs all files/Dir. in OS
+- sudo : means {super user do}
 
-    -'Tee' reads the standard input and writes it to both the standard output (terminal) 
-    and to save output in a a file + showing output in terminal (if I want)
+- 'Tee' reads the standard input and writes it to both the standard output (terminal) 
+and to save output in a a file + showing output in terminal (if I want)
      
-     - it shows output + saving output in a file
-       $ ls /etc |tee file.txt
+- it shows output + saving output in a file
+```
+ls /etc |tee file.txt
+```
+Examples:
+```
+ls /etc | tee etc_content.txt
+```
 
-    Examples:
-        $ ls /etc | tee etc_content.txt
-        $ cat /etc/passwd | grep ^ahmed |tee file.txt | wc -l       O/P: 1
-        -commands are like water running in a pipe
+```
+cat /etc/passwd | grep ^ahmed |tee file.txt | wc -l
+```
+> O/P: 1
+> 
+- Commands are like water running in a pipe
         
+
+Redirection :
+--------------
+
+- Save text in a file (Override it's content)
+```
+echo arafat > fil1.txt
+```        
+
+- Concatenate (append) text in a file {in new line} as str = str+text
+```
+echo is my best friend >> file1.txt
+```
+
+```
+cat file1.txt
+```
+> O/P: arafat <br>
+> is my best friend  {in new line}
+
+- It only save errors in err_file instead of printing it + printing other paths files (which don't have errors)
+so, its redirecting error in a file instead of printing them
+```
+ls /fooo 2> err_file
+```
+- Concatenate (append) text in a file in new line as str = str+text but for redirecting error
+```
+ls /fooo 2>> err_file
+```
+- Will only print errors and save rest in fileX.txt, redirecting standard output (terminal)
+```
+ls / > fileX.txt
+```
+- Will redirect both standard errors and standard output
+```
+ls > fileX.txt 2>&1
+```
+> 1 : standard output <br>
+> 2 : standard error <br>
+> & between them <br>
+
+- Note: ```>``` is same as ```1>```
+
+
+
+```
+mail -s "Subject" arafat@gmail.com < FileName
+```
+> [<] called standard input redirection <br>
+> Means that you take text in FileName as an input for command <br>
+> FileName contains body of mail (instead of writing body in command) <br>
+> Install its package first <br>
+
+
+VI Editor:
+------------
+- Only editor available in rescue mode (as safe mode in windows)
+
+```
+vi file.txt
+```
+
+- hit [i] to enter insert mode
+- hit [esc] to enter command mode
+
+- In command mode:
+   - :q! -> to Quit
+   - :wq! -> to Write and then quite
+   - :w! -> to Write (save)
+   - You can use up/down/right/left buttons in command mode
+
+- Also In command mode:
+   - hit [dd] : to cut a line
+   - hit [pp] : to copy a line
+   - hit [p OR P] : to paste copied line, small p to put copied line under cur line and big P to put it above
+   - hit [D] -> Delete a line (from cursor to end of line)  H[e]llo wolrd -> H      
+    -----------
+   - :n,nd -> Delete Range of lines
+   - :%d -> Delete all lines
+   - /text -> to highlight text in file
+   - hit [enter] then [n]down or [N]up to traverse along highlighted text
+   - :set nu -> To show number of lines
+```
+1
+2
+3
+```
+   - :set nonu -> to hide number of lines
+
+
+Environment Variables:
+-----------------------
+```
+x = arafat
+echo $x
+```
+> O/P: arafat
+
+```
+echo $PWD
+```
+> O/P: /home/arafat/Document
+```
+echo $USER
+```
+O/P: arafat
+```
+echo $SHELL
+```
+> O/P: /bin/bash <br>
+> For type of shell, its bash here <br>
+> bash : means born against shell <br>
+
+```
+export CURRENT_USER = arafat
+```
+> Export is used to create environment variables, best practices is to name it with upper case
+
+```
+echo CURRENT_USER
+```
+> env USER (X)  WRONG
+
+``` printev current_user ``` -> no need to $ sign
+
+- Note: this is only for current terminal (not permanent), to solve this save it in initialization files ```~/.bashrc```
+
+```
+nano ~/.bashrc {save it here}
+```
+- To execute it or just close all terminals (as you are reloading page in web so changes can take place)
+```
+source ~/.bashrc
+```
+- To print all environment variables
+```
+printev
+```
+OR
+```
+ev
+```
+
+- To remove variable
+```
+unset <VariableName>
+```
+Example:
+```
+unset CURRENT_USER
+```
+
+
+Command Quoting:
 ------------------
-  ~ Redirection :
-------------------
-        - Save text in a file (Override it's content)
-        $ echo arafat > fil1.txt
-        
-        - Concatenate (append) text in a file {in new line} as str = str+text
-         $ echo is my best friend >> file1.txt
-         $ cat file1.txt            O/P: arafat
-                                         is my best friend  {in new line}
 
-         -It only save errors in err_file instead of printing it + printing other paths files (which don't have errors)
-         so, its redirecting error in a file instead of printing them
-          $ ls /fooo 2> err_file
+```
+echo $PWD   
+```
+> Will print path
+```
+echo  "$PWD"
+```
+> Will print path
+```
+echo  '$PWD'
+```
+> Will print [$PWD] as text <br>
+> single quote ignores all meta-character
+```
+echo  '\$PWD'
+```
+> Will print [\$PWD] as text
+```
+echo" \$PWD"
+```
+> Will print [$PWD] as text <br>
+> Double quotes ignores next meta-character
+```
+echo "Today date is" $(date)
+```
 
-         - Concatenate (append) text in a file in new line as str = str+text but for redirecting error
-          $ ls /fooo 2>> err_file
+```
+$ rm -r $(ls) = rm -r *
+```
 
-         - Will only print errors and save rest in fileX.txt, redirecting standard output (terminal)
-           $ ls / > fileX.txt
-
-         - Will redirect both standard errors and standard output
-             $ ls > fileX.txt 2>&1
-             1 -> standard output
-             2 -> standard error
-             & between them
-
-         Note:
-             [>] is same as [1>]
-
-
-
-             $ mail -s "Subject" arafat@gmail.com < FileName
-             -> [<] called standard input redirection
-             -> means that you take text in FileName as an input for command
-             -> FileName contains body of mail (instead of writing body in command)
-                 -> Install its package first
-
-        ------------
-         ~VI Editor:
-        ------------
-                -> Only editor available in rescue mode (as safe mode in windows)
-
-                 $vi file.txt
-
-
-                 hit [i] to enter insert mode
-                 hit [esc] to enter command mode
-
-         -> In command mode:
-             :q! -> to Quit
-             :wq! -> to Write and then quite
-             :w! -> to Write (save)
-              - You can use up/down/right/left buttons in command mode
-         -> In command mode:
-                 hit [dd] -> to cut a line
-                 hit [pp] -> to copy a line
-                 hit [p OR P] -> to paste copied line, small p to put copied line under cur line and big P to put it above
-                 hit [D] -> Delete a line (from cursor to end of line)  H[e]llo wolrd -> H
-                 
-                 :n,nd -> Delete Range of lines
-                 :%d -> Delete all lines
-                 /text -> to highlight text in file
-                 hit [enter] then [n]down or [N]up to traverse along highlighted text
-
-            :set nu -> To show number of lines
-                 1
-                 2
-                 3
-            :set nonu -> to hide number of lines
-
-         -----------------------
-         ~Environment Variables:
-         -----------------------
-               $ x = arafat
-               $ echo $x           O/P: arafat
-
-               $ echo $PWD       O/P: /home/arafat/Document
-               $ echo $USER      O/P: arafat
-               $ echo $SHELL     O/P: /bin/bash
-                       -> For type of shell, its bash here
-               -> bash : means born against shell
-
-                       $ export CURRENT_USER = arafat
-                       -> export is used to create environment variables, best practices is to name it with upper case
-
-                       $ echo CURRENT_USER
-
-                       $ env USER (X)  WRONG
-
-                       $ printev current_user -> no need to $ sign
-
-           Note: this is only for current terminal (not permanent), to solve this save it in initialization files ~/.bashrc
-
-    $ nano ~/.bashrc {save it here}
-
-    - To execute it or just close all terminals (as you are reloading page in web so changes can take place)
-    $ source ~/.bashrc
-
-    - To print all environment variables
-        $ printev
-        OR
-        $ ev
-
-    - To remove variable
-    $ unset <VariableName>
-ex: $ unset CURRENT_USER
-
-------------------
-~ Command Quoting:
-------------------
-
-    $ echo $PWD   --> will print path
-    $ echo  "$PWD" --> will print path
-    $ echo  '$PWD' --> will print [$PWD] as text
-    -> single quote ignores all meta-character
-    $ echo  '\$PWD' --> will print [\$PWD] as text
-    $ echo" \$PWD" --> will print [$PWD] as text
-    -> Double quotes ignores next meta-character
-    $ echo "Today date is" $(date)
-    $ rm -r $(ls) = rm -r *
-
-     $ history
-     -> All commands written by you is saved in ~\.bash.history
-     $ !! -> execute previous command
-     $ !n -> ex: !350 -> execute command No. 350 in history
-     $ !-n -> ex: !-2 -> previous previous Command (n Times)
-     $ alias q = "ls -a"
-      -> Remember not permanent, save it in ~/.bashrc to become permanent
-     $ q         -> Execute alias
+```
+$ history
+```
+> All commands written by you is saved in ~\.bash.history
+```!!``` -> execute previous command
+```!n``` -> Example: ```!350``` -> execute command No. 350 in history
+```!-n```-> Example: ```!-2``` -> previous previous Command (n Times)
+```
+alias q = "ls -a"
+```
+> Remember not permanent, save it in ```~/.bashrc``` to become permanent
+```
+$ q
+```
+> Execute alias
     
-    -Note: if you name it foe example as [ls], t it will execute it not default [ls] command, to fix 
-    it instead of closing terminal use [\ls] backslash ls
+- Note: if you name it foe example as ```ls```, t it will execute it not default ```ls``` command, to fix 
+it instead of closing terminal use ```\ls``` backslash ls
 
 
 
