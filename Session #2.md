@@ -1,81 +1,120 @@
+# Session #2
+
+
+String Processing :
 ---------------------
-~ String Processing:
----------------------
+
 inside /etc/passwd
--> username:password:UID:GID:comment:homepath:terminalpath
-    [:] Called separator(delimiter)
+- ```username:password:UID:GID:comment:homepath:terminalpath```
+- [:] Called separator(delimiter)
 
-    - Count characters in a file
-    $ wc <FileName>
-    ex:$ wc /etc/passwd
-    O/P: 47 82 2783 /etc/passwd
-    Line Word Character respectively
+- Count characters in a file
+```
+wc <FileName>
+```
+Eample:
+```
+wc /etc/passwd
+```
+O/P: ```47 82 2783 /etc/passwd```
+- Line Word Character respectively
 
-    $ wc -c -l -w /etc/passwd
-    c-> Character
-    l-> Line
-    w-> Word
+```
+wc -c -l -w /etc/passwd
+```
+> c : Character <br>
+> l : Line <br>
+> w : Word <br>
 
-    - Search for lines that contain a specific text in a file
-    $ grep <TextToSearch> <FileName>
-    ex: $ grep ahmed /etc/passwd
+- Search for lines that contain a specific text in a file
+```
+grep <TextToSearch> <FileName>
+```
+Example:
+```
+grep ahmed /etc/passwd
+```
+- Search for lines that starts with a specific text in a file
+Example:
+```
+grep ^ahmed /etc/passwd
+```
+- Search for lines that {ends} with a specific text in a file
+Example:
+```
+grep ahmed$ /etc/passwd
+```
 
-    - Search for lines that starts with a specific text in a file
-    ex: $ grep ^ahmed /etc/passwd
+- Search for lines that contain a specific insensitive text in a file
+Example: 
+```
+grep -i ahmed /etc/passwd
+```
+> -i for insensitive, it may be Ahmed or ahmed
 
-    - Search for lines that {ends} with a specific text in a file
-    ex: $ grep ahmed$ /etc/passwd
+- Search for lines that contain a specific text in all files in Cur. Dir.
+```
+grep -r Dir1
+```
+- Search for lines that {Do not} contain a specific text in a file
+```
+grep -v ahmed /etc/passwd
+```
+> Invert (Not Contains) <br>
+> Work also with [-r] (folders)
 
+- To sort lines in a files
+```
+sort -T: -k -n <FileName>
+```
+> -T: Means that separator is [:] <br>
+> -k Number of Field to sort with <br>
+> -n : treat field as a No. if it is a No. not as string (ASCII) {1 Not '1'} <br>
+Example:
+```
+sort -T: -k3 -n /etc/passwd
+```
+Note: add [-r] flag to reverse sort
+> ```sort``` doesn't change file, it just changes output (how its shown in terminal)
 
-    - Search for lines that contain a specific insensitive text in a file
-    ex: grep -i ahmed /etc/passwd
-     -> -i for insensitive, it may be Ahmed or ahmed
+```
+sort -T: -k1 -n /etc/passwd > sortedGroup.txt
+```
+> Save output of first command as a text in file called sortedGroup.txt
 
-    - Search for lines that contain a specific text in all files in Cur. Dir.
-      $ grep -r Dir1
+- Show only first,third (for example) fields for each line
+```
+cut -d: -f1,2,3,--- <FileName>
+```
+Example: 
+```
+cut -d: -f 1,3 /etc/group
+```
+- Just Print text in terminal
+```
+echo hello world
+```
+- Save text in a file
+```
+echo hello world > fil1.txt
+```
 
-    - Search for lines that {Do not} contain a specific text in a file
-      $ grep -v ahmed /etc/passwd
-       -> Invert (Not Contains)
-       -> Work also with [-r] (folders)
+Piping & Redirection:
+-----------------------
 
+```
+ls /etc | more
+```
 
-
-    - To sort lines in a files
-    $ sort -T: -k -n <FileName>
-    -> -T: Means that separator is [:]
-    -> -k Number of Field to sort with
-    -> -n : treat field as a No. if it is a No. not as string (ASCII) {1 Not '1'}
-     ex: $ sort -T: -k3 -n /etc/passwd
-
-    Note: add [-r] flag to reverse sort
-     -> sort doesn't change file, it just changes output (how its shown in terminal)
-
-    $ sort -T: -k1 -n /etc/passwd > sortedGroup.txt
-    -> save output of first command as a text in file called sortedGroup.txt
-
-    - Show only first,third (for example) fields for each line
-     $ cut -d: -f1,2,3,--- <FileName>
-     ex: $ cut -d: -f 1,3 /etc/group
-
-    - Just Print text in terminal
-     $ echo hello world
-
-    - Save text in a file
-     $ echo hello world > fil1.txt
-
-    -----------------------
-    ~ Piping & Redirection:
-    -----------------------
-
-        $ ls /etc | more
-        $ ls /etc | grep passwd
-        -> [|] pipe character
+```
+ls /etc | grep passwd
+```
+> [|] pipe character
        
-       -> its like executing first command and save it's output in file instead of showing in in terminal
+- Its like executing first command and save it's output in file instead of showing in in terminal
             then passing this file to second command after pipe character [|]
 
-         $ sudo ls -R / | grep shadow
+$ sudo ls -R / | grep shadow
             -> -R / Means to show all files/Dir. inside root [/] and also inside each Dir.
             show its files/Dir and so on, so it outputs all files/Dir. in OS
     -> sudo : means {super user do}
