@@ -2,14 +2,13 @@
 
 
 - Testing and Logical operations:
-
--a                  -> and operator <br>
--o                  -> or operator <br>
--f <FileName>       -> File Existence {1:false , 0:true} <br>
--h <FileName>       -> symbolic Link <br>
--r <FileName>       -> Readable <br>
--w <FileName>       -> Writable <br> 
--x <FileName>       -> Executable <br>
+    -a                  -> and operator <br>
+    -o                  -> or operator <br>
+    -f <FileName>       -> File Existence {1:false , 0:true} <br>
+    -h <FileName>       -> symbolic Link <br>
+    -r <FileName>       -> Readable <br>
+    -w <FileName>       -> Writable <br> 
+    -x <FileName>       -> Executable <br>
 
 - String Testing:
     - ```str1 = str2```
