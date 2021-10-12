@@ -330,9 +330,9 @@ $ rm -r $(ls) = rm -r *
 $ history
 ```
 > All commands written by you is saved in ~\.bash.history
-```!!``` -> execute previous command
-```!n``` -> Example: ```!350``` -> execute command No. 350 in history
-```!-n```-> Example: ```!-2``` -> previous previous Command (n Times)
+- ```!!``` -> execute previous command
+- ```!n``` -> Example: ```!350``` -> execute command No. 350 in history
+- ```!-n```-> Example: ```!-2``` -> previous previous Command (n Times)
 ```
 alias q = "ls -a"
 ```
