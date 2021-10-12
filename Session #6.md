@@ -232,26 +232,26 @@ where : 1-> Minute {0-59} <br>
 
 Example :   
     ```
-    0 22 * * 1 ~/myscipt.sh
+0 22 * * 1 ~/myscipt.sh
     ```
 - This Means that device will run this script every Monday at 10 : 00 pm
 
 - ``` cron -e ``` -> will open file in /temp/.../crontab, where you can put command in it
 ```
-    crontab -l
+crontab -l
 ```
 - Make sure crin service is running
 ```
-    service crone start
+service crone start
 ```
 - Run crin tab every minute
 ```
-    * * * * * /home/ahmed/for.sh
+* * * * * /home/ahmed/for.sh
 ```
 */5 -> to run every 5 minutes
 > You have to enter full path of script
 
 - to make a cron tab for specific user
 ```
-    crontab -e -u <User>
+crontab -e -u <User>
 ```
