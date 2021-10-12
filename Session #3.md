@@ -176,12 +176,12 @@ File Permission and Ownership :
 - Directory:
     - [r] for Dir. -> to [ls] this Dir.
     - [w] for Dir. -> to copy/create file/Dir. inside it
-    - [X] for Dir. -> to go to [cd] this Dir. {enter it}
+    - [-x-] for Dir. -> to go to [cd] this Dir. {enter it}
 
 - File:
     - [r] for Dir. -> read its content
     - [w] for Dir. -> to edit its content
-    - [X] for Dir. -> to execute executable files as .py/.cpp
+    - [-x-] for Dir. -> to execute executable files as .py/.cpp
 
 
 - To show permission/ownership for a file
