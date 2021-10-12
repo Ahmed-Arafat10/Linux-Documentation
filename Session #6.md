@@ -251,7 +251,7 @@ service crone start
 */5 -> to run every 5 minutes
 > You have to enter full path of script
 
-- to make a cron tab for specific user
+- Make a cron tab for specific user
 ```
 crontab -e -u <User>
 ```
