@@ -12,19 +12,19 @@
 -x <FileName>       -> Executable <br>
 
 - String Testing:
-    - str1 = str2
-    - str1 != str2
-    -   -2 string
-    -   n string
+    - ```str1 = str2```
+    - ```str1 != str2```
+    -  ``` -2 string```
+    -  ``` n string```
 
 - Integer Testing:
 
-    - int1 -eq intr2 {==}
-    - int1 -ne intr2 {!=}
-    - int1 -gt intr2 {>}
-    - int1 -lt intr2 {<}
-    - int1 -ge intr2 {>=}
-    - int1 -le intr2 {<=}
+    - ``` int1 -eq intr2 ``` {==}
+    - ``` int1 -ne intr2 ```{!=}
+    - ``` int1 -gt intr2 ``` {>}
+    -``` int1 -lt intr2 ```{<}
+    -``` int1 -ge intr2 ```{>=}
+    - ``` int1 -le intr2 ``` {<=}
 
 
 If Command:
@@ -34,7 +34,9 @@ If Command:
     then
         -command
     fi
-    {OR}
+```                                 
+OR
+```
     if [expression]
     then
         -command
@@ -57,17 +59,18 @@ In file.sh :
     read
     echo "Your age is $REPLY"
 ```
-{OR}
+OR
+                                 
  ```                        
     echo "Enter Your age"
     read answer
     echo "Your age is $answer"
 ```
-{OR}
--You can use ```$1``` and pass input as an argument without having to use read
+OR
+- You can use ```$1``` and pass input as an argument without having to use read
 
 
-Case:
+Case :
 -----
 ```                         
         case variable in
@@ -80,7 +83,7 @@ Case:
         esac
 ```
                          
-While:
+While :
 ------
 
 ```                         
@@ -106,7 +109,7 @@ VIP Note: If you want to calculate a text with a string use this method
     O/P : ahmedarafat
 ```
 
-Until:
+Until :
 ------
 ```
      until command
@@ -118,7 +121,7 @@ Note: for ```until```, while condition is false you will enter loop when it beco
 you will exit from it
 
 
-For:
+For :
 ----
 ```
     for variable in word list
@@ -129,8 +132,8 @@ For:
 Select:
 -------
 
-        EX:
-                         ```
+ Example:
+```
             select choice in Ahmed Mohamed Yousry
         do
           case $choice in
@@ -140,22 +143,22 @@ Select:
             ;;
             Yousry) print "Yousry"
             ;;
-            *) print $reply is not one of the choices
+            *) print "$reply is not one of the choices"
             ;;
           esac
         done
 ```
-Note : To exit write [exit] or break
-[exit] will terminate whole script like return 0 in C Language
+- Note : To exit write [exit] or break
+- ```exit``` will terminate whole script like return 0 in C Language
 
-> ``` break ```
+> ``` break ``` <br>
 > ``` continue ```
 
 Shift:
 ------
 
 In File.sh :
-    ```
+```
     echo $1
     echo $2
     echo $3
@@ -164,8 +167,8 @@ In File.sh :
     echo $1
     echo $2
     echo $3
-    ```
--> It shift (Add)2 to parameter in echo statements after it
+ ```
+-> It shift (Add) 2 to parameter in echo statements after it
 ```$1``` become ```$3```
 ```$2``` become ```$4```
 and so on
@@ -220,13 +223,13 @@ echo ${#arr[@]}
 Cron Job :
 ----------
 
-- Use ```crontab -e ``` command
-Syntax : ``` 1 2 3 4 5 <ScriptFullPath> arg1 arg2 ```
-where : 1-> Minute {0-59}
-        2-> Hours {0-23}
-        3-> Day {0-31}
-        4-> Month {0-12 [12 == December]}
-        5-> Days of weak (0-7 [7 OR 0 == sunday])
+- Use ```crontab -e ``` command <br>
+Syntax : ``` 1 2 3 4 5 <ScriptFullPath> arg1 arg2 ``` <br>
+where : 1-> Minute {0-59} <br>
+        2-> Hours {0-23} <br>
+        3-> Day {0-31} <br>
+        4-> Month {0-12 [12 == December]} <br>
+        5-> Days of weak (0-7 [7 OR 0 == sunday]) <br>
 
 Example :   
     ```
