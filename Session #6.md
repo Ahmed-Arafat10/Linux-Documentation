@@ -54,9 +54,9 @@ fi
 ```
 In file.sh :
  ```
-    echo "Enter Your age"
-    read
-    echo "Your age is $REPLY"
+echo "Enter Your age"
+read
+echo "Your age is $REPLY"
 ```
 OR
                                  
