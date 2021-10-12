@@ -29,17 +29,17 @@
 If Command:
 -----------
  ```  
-    if command
-    then
-        -command
-    fi
+if command
+ then
+     -command
+fi
 ```                                 
 OR
 ```
-    if [expression]
-    then
-        -command
-    fi
+if [expression]
+then
+     -command
+fi
 ```
 - Nested If Command:
 ```
@@ -61,9 +61,9 @@ echo "Your age is $REPLY"
 OR
                                  
  ```                        
-    echo "Enter Your age"
-    read answer
-    echo "Your age is $answer"
+echo "Enter Your age"
+read answer
+echo "Your age is $answer"
 ```
 OR
 - You can use ```$1``` and pass input as an argument without having to use read
@@ -78,7 +78,7 @@ case variable in
   Value2) command(s)
     ;;
   *) command(s)
-   ;;
+    ;;
 esac
 ```
                          
@@ -86,35 +86,35 @@ While :
 ------
 
 ```                         
-    while command
-    do
-        -command
-    done
+while command
+do
+    -command
+done
 ```
 EX:
 ```                         
-    num=0
-    while [$num -it 10]
-    do
-        echo $num
-        let num=$num+1
-    done
+num=0
+while [$num -it 10]
+do
+    echo $num
+    let num=$num+1
+done
 ```
 VIP Note: If you want to calculate a text with a string use this method
 ```
-    str=ahmed
-    str="$str"arafat
-    echo $str
-    O/P : ahmedarafat
+str=ahmed
+str="$str"arafat
+echo $str
 ```
-
+- O/P : ahmedarafat
+                                 
 Until :
 ------
 ```
-     until command
-     do
-        -command
-     done
+until command
+do
+   -command
+done
 ```
 Note: for ```until```, while condition is false you will enter loop when it become true
 you will exit from it
@@ -123,29 +123,29 @@ you will exit from it
 For :
 ----
 ```
-    for variable in word list
-    do
-        -command
-    done
+for variable in word list
+do
+   -command
+done
 ```
 Select:
 -------
 
  Example:
 ```
-            select choice in Ahmed Mohamed Yousry
-        do
-          case $choice in
-            Ahmed) print "Ahmed"
-            ;;
-            Mohamed) print "Mohamed"
-            ;;
-            Yousry) print "Yousry"
-            ;;
-            *) print "$reply is not one of the choices"
-            ;;
-          esac
-        done
+select choice in Ahmed Mohamed Yousry
+   do
+      case $choice in
+         Ahmed) print "Ahmed"
+          ;;
+         Mohamed) print "Mohamed"
+          ;;
+         Yousry) print "Yousry"
+          ;;
+         *) print "$reply is not one of the choices"
+          ;;
+      esac
+   done
 ```
 - Note : To exit write [exit] or break
 - ```exit``` will terminate whole script like return 0 in C Language
@@ -158,14 +158,14 @@ Shift:
 
 In File.sh :
 ```
-    echo $1
-    echo $2
-    echo $3
-    shift 2
-    echo "----------------"
-    echo $1
-    echo $2
-    echo $3
+echo $1
+echo $2
+echo $3
+shift 2
+echo "----------------"
+echo $1
+echo $2
+echo $3
  ```
 -> It shift (Add) 2 to parameter in echo statements after it
 ```$1``` become ```$3```
@@ -190,23 +190,23 @@ Arrays:
 
 - Initialize an index
 ```
-    array[0]=ahmed
+array[0]=ahmed
 ```
 - Initialize a whole array
 ```
-    arr = (Element1 Element2 ElementN)
+arr = (Element1 Element2 ElementN)
 ```
 - Add new elements to an array
 ```
-    arr += (NewElement1 NewElement2 NewElementN)
+arr += (NewElement1 NewElement2 NewElementN)
 ```
 - Delete an element
 ```
-    unset arr[index]
+unset arr[index]
 ```
 - Print an index
 ```
-    echo ${arr[index]}
+echo ${arr[index]}
 ```
 - Display all elements of an array
 ```
@@ -214,7 +214,7 @@ echo ${arr[*]}
 echo ${arr[@]}
 for i in "${arr[@]}"
 do
-    echo "$i"
+echo "$i"
 done
 echo ${#arr[@]}
 ```
