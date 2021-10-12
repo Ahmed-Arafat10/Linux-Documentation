@@ -87,14 +87,14 @@ su <username>
   ```
   > -l : list fields
 
-    - Some flags used with ``` chage ``` 
-        - l (small L) -> view ageing information about account
-        - d -> change last password change date (-d 2021-12-31)
-        - E -> set when account expires (-E 2022-12-31)
-        - M {Max} {OR} m {Min} -> changes password max or min age {-M 5}
-        - w -> Number of days to give prior warning before the password expires {-w 2}
-        - l (capital i) -> specify number of days account should be inactive after its expiry {-I 5}
-    Example: ``` sudo chage -m 5 -w 2 arafat ```
+- Some flags used with ``` chage ``` 
+    - l (small L) -> view ageing information about account
+    - d -> change last password change date (-d 2021-12-31)
+    - E -> set when account expires (-E 2022-12-31)
+    - M {Max} {OR} m {Min} -> changes password max or min age {-M 5}
+    - w -> Number of days to give prior warning before the password expires {-w 2}
+    - l (capital i) -> specify number of days account should be inactive after its expiry {-I 5}
+- Example: ``` sudo chage -m 5 -w 2 arafat ```
 
 
 
@@ -153,11 +153,11 @@ File Permission and Ownership :
 
  - -|rwx|r-x|--- 1 arafat Zodiacs 0 Oct 31 11:06 Test.txt
 
- - - --> file type {- -> file // d -> Dir.}
- - rwx -> user permission
-- r-w -> Group permission
-- --- -> other permission
-- 1 --> # of hard link (will discuss it in next sessions)
+ - [-] --> file type {- -> file // d -> Dir.}
+ - [rwx] -> user permission
+- [r-w] -> Group permission
+- [---] -> other permission
+- [1] --> # of hard link (will discuss it in next sessions)
 
 <br>
 
