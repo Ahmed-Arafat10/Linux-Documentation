@@ -72,14 +72,14 @@ OR
 Case :
 -----
 ```                         
-        case variable in
-            Value1) command(s)
-            ;;
-             Value2) command(s)
-            ;;
-             *) command(s)
-            ;;
-        esac
+case variable in
+  Value1) command(s)
+    ;;
+  Value2) command(s)
+    ;;
+  *) command(s)
+   ;;
+esac
 ```
                          
 While :
