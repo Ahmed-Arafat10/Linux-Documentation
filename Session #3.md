@@ -1,17 +1,20 @@
-==========
-Session #3
-==========
+#Session #3
+
 
 
 - Show all environment variables whether they are empty or not {In line #970}
-$ man bash
+```
+man bash
+```
 
-
--Show all environment variables that have values (not empty)
-$ printen
-{OR}
-$ env
-
+- Show all environment variables that have values (not empty)
+``` 
+printen
+```
+OR
+```
+env
+```
 
 -------------------------------
 Users and Groups Administration :
