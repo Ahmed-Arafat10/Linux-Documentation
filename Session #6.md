@@ -21,8 +21,8 @@
     - ``` int1 -eq intr2 ``` {==}
     - ``` int1 -ne intr2 ```{!=}
     - ``` int1 -gt intr2 ``` {>}
-    -``` int1 -lt intr2 ```{<}
-    -``` int1 -ge intr2 ```{>=}
+    - ``` int1 -lt intr2 ```{<}
+    - ``` int1 -ge intr2 ```{>=}
     - ``` int1 -le intr2 ``` {<=}
 
 
