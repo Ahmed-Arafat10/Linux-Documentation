@@ -87,8 +87,10 @@ EX:
 
 
 - Show all processes running in background only (when you used [&] in command)
+```
 $ jobs
-O/P : [1] + Running sleep 1000 &
+```
+> O/P : ```[1] + Running sleep 1000 &```
 
 - Transfer a process from background to foreground
        
