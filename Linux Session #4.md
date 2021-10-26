@@ -105,9 +105,9 @@ EX: fg %1    -> Number [1] is in Line #77
 - Search for a specific process by its name {like $ grip command}
        
       pgrep -x -u 1000 -l docker
--> -x : Search for an exact name { docker != dockermanager}
--> -u : Search for a process with its UserID who created it
--> -l : print PID + Process Name
+> -x : Search for an exact name { docker != dockermanager} <br>
+> -u : Search for a process with its UserID who created it <br>
+> -l : print PID + Process Name
 
 ---------------
 Linux Services :
