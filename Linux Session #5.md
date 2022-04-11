@@ -260,7 +260,7 @@ awk -F: '{ if($1 + $2 > 100) print $0 }' awk.txt
 ```
 
 ```
-awk '{ if(NR == 4 || NR == 5) print NR ":" $0}' /etc/passwd
+awk '{if(NR == 4 || NR == 5) print NR "->" $0}' /etc/passwd
 ```
 
 
