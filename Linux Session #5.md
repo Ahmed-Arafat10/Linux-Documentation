@@ -247,7 +247,7 @@ awk -F: '{i=1;while(i<=NF){print NF,$i;i++}}' /etc/passwd
 > It will print 7 fields for each line, each in a new line
 - For Loop
 ```
-awk -F: '{for(i=1;i<NF;i++){print NF,$i}}' /etc/passwd
+awk -F: '{for(i=1;i<=NF;i++){print NF,$i}}' /etc/passwd
 ```
 
 
