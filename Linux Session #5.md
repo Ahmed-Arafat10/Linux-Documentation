@@ -216,7 +216,7 @@ awk '{print $0,NF}' /etc/passwd
 - BEGIN is executed one time before awk process any line from the input file
 - It determines first value of FS,RS variables
 ```
-awk 'BEGIN {FS = ":";RS="\n\n"} {print $0,NR}' 2-empty-spaces.txt
+awk 'BEGIN {FS = ":";RS="\n"} {print $0,NR}' 2-empty-spaces.txt
 ```
 
 - END is executed one time after awk process all lines of input file
