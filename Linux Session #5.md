@@ -15,7 +15,7 @@ Sed utility :
 
 - It does not change your file unless the output is saved with shell redirection by default
 
-- Sed editor process a file (input)one line at a time and sens output to the screen
+- Sed editor process a file (input) one line at a time and send output to the screen
 
 - Sed stores the line it process in a buffer and once processing is finished the line
 is sent to the screen (unless command wad to delete the line) and the next line is read
