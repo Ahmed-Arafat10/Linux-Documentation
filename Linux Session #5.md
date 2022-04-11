@@ -252,13 +252,11 @@ awk -F: '{for(i=1;i<=NF;i++){print NF,$i}}' /etc/passwd
 
 
 ```
-awk '{ if($1 > $2) max = $1:
-        else max = $2;
-        print max}' texting.txt
+awk -F: '{if($1>$2)max=$1;else max=$2;print max}' awk.txt
 ```
 
 ```
-awk '{ if($1 + $2 > 100) print $0 } 'Testing.txt
+awk -F: '{ if($1 + $2 > 100) print $0 }' awk.txt
 ```
 
 ```
