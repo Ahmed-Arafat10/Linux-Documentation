@@ -289,7 +289,7 @@ Shell Script :
 chmod u+x day5.sh
 ```
 
-Remember : ``` echo $path``` -> Shows all Directories that stores commands of Linux, each time you enter a command
+Remember : ``` echo $PATH``` -> Shows all Directories that stores commands of Linux, each time you enter a command
 then hitting enter button system check if the entered command is exist in any file in these Directories
 
 - To make your script global {just enter his name and the press enter button}, use this command
