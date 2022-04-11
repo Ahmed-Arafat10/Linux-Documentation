@@ -183,19 +183,19 @@ awk 'Instructions' FileName
 
 - Print first field for each line
 ```
-awk -f: '{print $1}' /etc/passwd
+awk -F: '{print $1}' /etc/passwd
 ```
-> f: specify that field separator is [:]
+> F: specify that field separator is [:]
 
 
 - Print field 1,3 for each line
 ``` 
-awk -f: '{print $1,$3}' /etc/passwd
+awk -F: '{print $1,$3}' /etc/passwd
 ```
 
 - Print "Log name:" text with first field for each line
 ```
-awk -f: '{print "Log name:",$1}' /etc/passwd
+awk -F: '{print "Log name:",$1}' /etc/passwd
 ```
     
 - Display whole file {like $ cat}
