@@ -173,12 +173,12 @@ awk 'Instructions' FileName
 - In Awk, Line = Record
 
 - Important variables:
-    1) FS -> you can control field separator {default is space but you can change it to
+    1) ```FS``` -> you can control field separator {default is space but you can change it to
     colon [:] as in [/etc/passwd] }
-    2) RS -> record separator which is '\n' by default
-    3) $0 -> Means entire record {$1 for field #1 , $2 for field #2 , etc ...}
-    4) NR -> Means record number
-    5) NF -> Number of fields in a record {7 as in passwd}
+    2) ```RS``` -> record separator which is '\n' by default
+    3) ```$0``` -> Means entire record {$1 for field #1 , $2 for field #2 , etc ...}
+    4) ```NR``` -> Means record number
+    5) ```NF``` -> Number of fields in a record {7 as in passwd}
 
 
 - Print first field for each line
@@ -242,12 +242,12 @@ Loops:
 
 - While Loop
 ```
-awk -f: {i=1:while(i<NF){print NF,$i;i++}} /etc/passwd
+awk -F: '{i=1;while(i<NF){print NF,$i;i++}}' /etc/passwd
 ```
 
 - For Loop
 ```
-awk -f: {for(i=1;<NF;;i++){print NF,$i}} /etc/passwd
+awk -F: '{for(i=1;i<NF;i++){print NF,$i}}' /etc/passwd
 ```
 
 
