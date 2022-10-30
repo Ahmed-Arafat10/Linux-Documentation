@@ -212,8 +212,9 @@ vi file.txt
    - You can use up/down/right/left buttons in command mode
 
 - Also In command mode:
+   - hit [yy] : to copy a line
    - hit [dd] : to cut a line
-   - hit [pp] : to copy a line
+   - hit [pp] : to paste a line
    - hit [p OR P] : to paste copied line, small p to put copied line under cur line and big P to put it above
    - hit [D] -> Delete a line (from cursor to end of line)  H[e]llo wolrd -> H      
     -----------
