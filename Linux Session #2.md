@@ -281,7 +281,7 @@ printenv
 ```
 OR
 ```
-ev
+env
 ```
 
 - To remove variable
@@ -302,23 +302,23 @@ echo $PWD
 ```
 > Will print path
 ```
-echo  "$PWD"
+echo "$PWD"
 ```
 > Will print path
 ```
-echo  '$PWD'
+echo '$PWD'
 ```
 > Will print [$PWD] as text <br>
 > single quote ignores all meta-character
 ```
-echo  '\$PWD'
+echo '\$PWD'
 ```
 > Will print [\$PWD] as text
 ```
-echo" \$PWD"
+echo "\$PWD"
 ```
 > Will print [$PWD] as text <br>
-> Double quotes ignores next meta-character
+> Back slashh ignores next meta-character in Double quotes
 ```
 echo "Today date is" $(date)
 ```
