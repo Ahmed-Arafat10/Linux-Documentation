@@ -277,7 +277,7 @@ source ~/.bashrc
 ```
 - To print all environment variables
 ```
-printev
+printenv
 ```
 OR
 ```
