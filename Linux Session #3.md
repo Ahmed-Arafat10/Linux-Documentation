@@ -9,7 +9,7 @@ man bash
 
 - Show all environment variables that have values (not empty)
 ``` 
-printen
+printenv
 ```
 OR
 ```
