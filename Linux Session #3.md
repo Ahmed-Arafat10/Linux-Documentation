@@ -72,7 +72,7 @@ su <username>
     - In Line #31, shadow has 9 fields :
         - Username
         - Encrypted Password {One-way encryption}
-        - Number of days when password was last changed
+        - Date when password was last changed
         - Number of days before password can be changed (minimum password age)
         - Number of days after password must be changed (maximum password age)
         - Number of days before password expiry date to display the warning
