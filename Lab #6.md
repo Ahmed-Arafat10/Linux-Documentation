@@ -221,11 +221,12 @@ file called a tar file
 
        
       tar -option <ArchiveName> file1,file2,...
-option is for: -c -> Create a new tar file {archiving}
-               -t -> List table of content of a tar file
-               -x -> Extracts files from the tar command
-               -f -> Specify the archive file {used with archiving files or unarchiving files}
-               -v -> Verbase mode {more information}
+- option is for: 
+       -c -> Create a new tar file {archiving}
+       -t -> List table of content of a tar file
+       -x -> Extracts files from the tar command
+       -f -> Specify the archive file {used with archiving files or unarchiving files}
+       -v -> Verbase mode {more information}
 
 - Create a tar file{archive}
        
