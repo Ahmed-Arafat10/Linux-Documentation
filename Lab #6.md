@@ -269,7 +269,7 @@ Compression :
 
  -> Create a zipped & compressed file   
       
-      tar -cfz file.tar.gz dir7 file2.txt
+      tar -czf file.tar.gz dir7 file2.txt
 -> -z : stands for zip
 
 
