@@ -14,7 +14,7 @@ my name is ahmed
 ````
 > Note: DONT use `nano` command
 
-Q3) write the command that only shows the lines that don't contain text `root`
+Q3) write the command that only shows the lines that don't contain text `root` in `/etc/passwd` file
 
 
 Q4) 
