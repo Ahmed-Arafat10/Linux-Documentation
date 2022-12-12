@@ -189,13 +189,13 @@ Example:
 select choice in Ahmed Mohamed Yousry
    do
       case $choice in
-         Ahmed) print "Ahmed"
+         Ahmed) echo "Ahmed"
           ;;
-         Mohamed) print "Mohamed"
+         Mohamed) echo "Mohamed"
           ;;
-         Yousry) print "Yousry"
+         Yousry) echo "Yousry"
           ;;
-         *) print "$reply is not one of the choices"
+         *) echo "not one of the choices"
           ;;
       esac
    done
@@ -315,17 +315,16 @@ echo "result is $res"
 #! /bin/bash
 select choice in bis cic auc guc
 do
-case $choice in
-bis) echo "your college is bis" ;;
-cic) echo "your college is cic" ;;
-auc) echo "your college is auc" ;;
-guc) echo "your college is guc" ;;
-*) echo "not in the list"
-exit
-;;
-esac
+  case $choice in
+  bis) echo "your college is bis" ;;
+  cic) echo "your college is cic" ;;
+  auc) echo "your college is auc" ;;
+  guc) echo "your college is guc" ;;
+  *) echo "not in the list"
+  exit
+  ;;
+  esac
 done
-fi
 ````
 
 ### 9. `script9.sh`, `Bash Script For If Statement & AND Operator`
