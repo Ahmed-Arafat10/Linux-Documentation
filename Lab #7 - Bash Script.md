@@ -259,7 +259,7 @@ do
     echo $num
     if [ $num -eq 5 ]
     then
-        echo "Alaa & Mirna & Sherif & Aseel"
+        echo "Aalaa & Merna & Sherif & Aseel ely 7adro lab #7 <3"
     fi
     let num=$num+1
 done
