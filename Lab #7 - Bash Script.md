@@ -259,7 +259,7 @@ do
     echo $num
     if [ $num -eq 5 ]
     then
-        echo "ferial"
+        echo "Alaa & Mirna & Sherif & Aseel"
     fi
     let num=$num+1
 done
