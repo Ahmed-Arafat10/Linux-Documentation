@@ -1,5 +1,5 @@
 # OS2 : Lab #7 - Bash Script
-#### By TA `Ahmed Arafat`✌
+#### By TA `Ahmed Arafat`
 
 ### Let's start with dealing with bash script files
 - First create a file with extension `.sh`
