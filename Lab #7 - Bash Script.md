@@ -92,7 +92,7 @@ echo $Num
 
 
 ## `If` Statement :
-````
+````shell
 if [expression]
 then
      -command
@@ -160,7 +160,7 @@ do
 done
 ````
 
-### concatenate a text with a string :
+### `Concatenate` a text with a `string` :
 ````shell
 str=ahmed
 str="$str"arafat
