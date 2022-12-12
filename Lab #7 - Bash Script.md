@@ -75,11 +75,12 @@ echo $Num
  - `-w <FileName>` means Writable
  - `-x <FileName>` means Executable
 <br>
+
 - `String` Comparison :
-    - `str1 = str2`
-    - `str1 != str2`
-    - `-2 string`
-    - ` n string`
+  - `str1 = str2`
+  - `str1 != str2`
+  - `-2 string`
+  - ` n string`
 
 - `Integer` Comparison :
 
