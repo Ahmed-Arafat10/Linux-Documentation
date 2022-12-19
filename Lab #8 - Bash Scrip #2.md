@@ -10,13 +10,10 @@ done
 ````
 Or
 ````shell
-For:
-----
-
-    for variable in word list
-    do
-        -command
-    done
+for variable in word list
+ do
+    -command
+  one
 ````
 
 ## Arrays:
