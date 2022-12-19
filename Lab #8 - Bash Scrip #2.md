@@ -16,7 +16,7 @@ for variable in word list
  done
 ````
 
-## Arrays:
+## `Arrays`
 
 - `Bash Script` supports `numerically indexed` and `associative arrays` types (Using integers or strings as an `Index`)
 
