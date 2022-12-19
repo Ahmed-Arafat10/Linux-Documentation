@@ -1,7 +1,7 @@
 # OS2 : Lab #8 (Final Lab) - Bash Script #2
 #### By TA `Ahmed Arafat`
 
-### `for` loop 
+### `for` loop
 ````shell
 for(( i=0;i<100;i++ )) 
 do   
@@ -42,7 +42,7 @@ arr+=("Orange")
 unset arr[3]
 ````
 
-- Print an index 
+- Print an index
 ````shell
 echo ${arr[0]}
 ````
@@ -184,9 +184,7 @@ echo "There are 30 days in $month.";;
 echo "There are 31 days in $month.";;
   *) echo "Unknown month. Please check if you entered the correct month name: $month";;
 esac
-````  
-
-
+````
 
 
 ### 7. `script7.sh`
@@ -206,7 +204,7 @@ fi
 ````  
 
 
-### 7. `script7.sh`
+### 8. `script8.sh`
 ````shell
 #! /bin/bash
 echo "Please Enter A Number"
@@ -222,7 +220,7 @@ echo "number is less than 10"
 fi
 ````
 
-### 8. `script8.sh`
+### 9. `script9.sh`
 ````shell
 #! /bin/bash
 echo "Are You OK, Arafat ?"
