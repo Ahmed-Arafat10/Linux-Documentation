@@ -1,5 +1,5 @@
 
-### for loop 
+### `for` loop 
 ````shell
 for(( i=0;i<100;i++ )) 
 do   
