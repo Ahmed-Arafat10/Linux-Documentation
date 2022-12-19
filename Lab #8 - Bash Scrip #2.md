@@ -13,7 +13,7 @@ Or
 for variable in word list
  do
     -command
-  one
+ done
 ````
 
 ## Arrays:
