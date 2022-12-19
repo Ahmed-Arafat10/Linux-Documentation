@@ -19,43 +19,70 @@ For:
 
 ## Arrays:
 
-- Bash supports numerically=y indexed and associative arrays types {Using intergers or strings}
-- You can delete an index (element)
-    
+- `Bash Script` supports `numerically indexed` and `associative arrays` types (Using integers or strings as an `Index`)
+
+### 1. `numerically indexed` Array
+
 - Initialize an index
 ````shell
-array[0]=ahmed
+array[0]=arafat
 ````
 
-- Initialize a whole array
+- Initialize a whole `array`
 ````shell
-- arr = (Element1 Element2 ElementN)
+arr=("Apple" "Banana" "Cherry")
 ````
 
-- Add new elements to an array 
+- Add new elements to an existing `array`
 ````shell
-arr += (NewElement1 NewElement2 NewElementN)
+arr+=("Orange")
 ````
 
-- Delete an element
+- Delete an element in an `array`
 ````shell
-unset arr[index]
+unset arr[3]
 ````
 
 - Print an index 
 ````shell
-echo ${arr[index]}
+echo ${arr[0]}
+````
+> Output: `Apple`
+
+
+### 2. `associative` Array
+
+- Initialize an associative `array`
+````shell
+declare -A arr1=( ["EGY"]="Egypt" [JPN]=JAPAN
+[KOR]=Korea ["TWN"]="Taiwan cap" [TH]=Thailand )
+echo ${arr1[JPN]}
+echo ${arr1["TWN"]}
 ````
 
 - Display all elements of an array
 ````shell
 echo ${arr[*]}
+# Or
 echo ${arr[@]}
+````
+
+- Iterate on array's elements
+````shell
 for i in "${arr[@]}"
 do
-echo "$i"
+  echo "$i"
 done
+````
+
+- Display size of the `array`
+````shell
 echo ${#arr[@]}
+````
+
+- Display all indices of the array
+````shell
+echo ${!arr[*]}
 ````
 
 
@@ -127,7 +154,7 @@ done
 ### 5. `script5.sh`
 ````shell
 #! /bin/bash
-echo "How Many ELements You Want To Enter In An Array"
+echo "How Many Elements You Want To Enter In An Array"
 typeset -i num
 typeset -i AV
 typeset -i Sum=0
