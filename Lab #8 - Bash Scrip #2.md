@@ -203,24 +203,7 @@ echo "number is less than 10"
 fi
 ````  
 
-
 ### 8. `script8.sh`
-````shell
-#! /bin/bash
-echo "Please Enter A Number"
-read num
-if [ $num -gt 100 ]
-then
-echo "$num is larger than 100"
-elif [ $num -gt 10 -a $num -le 100 ]
-then
-echo "$num is between 10 and 100 "
-else
-echo "number is less than 10"
-fi
-````
-
-### 9. `script9.sh`
 ````shell
 #! /bin/bash
 echo "Are You OK, Arafat ?"
