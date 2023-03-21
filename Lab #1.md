@@ -108,7 +108,7 @@ mkdir Dir1 ../Dir2
 date
 ````
 
-- To show calender of current year
+- To show calendar of current year
 ````
 cal
 ````
@@ -118,7 +118,7 @@ cal
 cal 1990
 ````
 
-- To create Directory/Folder 
+- To create Dir ectory/Folder 
 ````
 mkdir <NameOfDir>
 ````
