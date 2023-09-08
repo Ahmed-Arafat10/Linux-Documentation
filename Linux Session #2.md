@@ -212,8 +212,9 @@ vi file.txt
    - You can use up/down/right/left buttons in command mode
 
 - Also In command mode:
+   - hit [yy] : to copy a line
    - hit [dd] : to cut a line
-   - hit [pp] : to copy a line
+   - hit [pp] : to paste a line
    - hit [p OR P] : to paste copied line, small p to put copied line under cur line and big P to put it above
    - hit [D] -> Delete a line (from cursor to end of line)  H[e]llo wolrd -> H      
     -----------
@@ -276,11 +277,11 @@ source ~/.bashrc
 ```
 - To print all environment variables
 ```
-printev
+printenv
 ```
 OR
 ```
-ev
+env
 ```
 
 - To remove variable
@@ -301,23 +302,23 @@ echo $PWD
 ```
 > Will print path
 ```
-echo  "$PWD"
+echo "$PWD"
 ```
 > Will print path
 ```
-echo  '$PWD'
+echo '$PWD'
 ```
 > Will print [$PWD] as text <br>
 > single quote ignores all meta-character
 ```
-echo  '\$PWD'
+echo '\$PWD'
 ```
 > Will print [\$PWD] as text
 ```
-echo" \$PWD"
+echo "\$PWD"
 ```
 > Will print [$PWD] as text <br>
-> Double quotes ignores next meta-character
+> Back slashh ignores next meta-character in Double quotes
 ```
 echo "Today date is" $(date)
 ```
