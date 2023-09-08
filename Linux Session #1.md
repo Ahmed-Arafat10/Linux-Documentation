@@ -1,10 +1,10 @@
 # Session #1
 
-- Kernal is a computer program that is the heart and core of
+- Kernel is a computer program that is the heart and core of
 an operating system
-- Kernal is responsilbe for low-level tasks as disk managament,
-memory management and task managaement.
-```
+- Kernel is responsible for low-level tasks as disk management,
+memory management and task management.
+````
   -----------
   Application
   -----------
@@ -12,39 +12,51 @@ memory management and task managaement.
 -----------------
 CPU|Memory|Device
 -----------------
-```
+````
+
 - Why linux ?
-1- FOSS {free open source software}
-2- secure
-3- stability and performance
+  1. FOSS {free open source software}
+  2. secure
+  3. stability and performance
 
-- Linux distribution (Distro) is an OS that is formed from a collection of softwares that is based upon the linux kernel.
+- Distribution Of Linux (Distro) is an OS that is formed from a collection of softwares that is based upon the linux kernel.
 
 
 
-- Linux file hierarchy
-```
+- Linux File Hierarchy
+````
                         / ----root
         /bin     /proc      /boot    /etc   /home     /lib    /var
     All package             So device       users
     of system               can open       of system
 
-```
+````
 
 
-- Commands:
+## Linux Commands
 
-- Print working directory
+- Print working directory (your current path)
 ```
 pwd
 ```
 > O/P : /home/arafat
+
+
+- man a manual to help with commands
+```
+man ls
+```
+> press `q` button to exit man.
+
 
 - To clean terminal from all commands
 ```
 clear 
 ```
 > (OR) ```ctrl+L```
+
+
+
 
 - List content of current Directory
 ```
@@ -100,7 +112,7 @@ mkdir cd ../Test1
 ```
 cd ./Downloads
 ```
-> ./Download means from cur. Dir. go to Dowload
+> ./Download means from cur. Dir. go to Download
 
 - Open manual for specific command
 ```
@@ -124,7 +136,7 @@ whatis ls
 date
 ```
 
-- To show calender of current year
+- To show calendar of current year
 ```
 cal
 ```
@@ -150,7 +162,7 @@ touch <FileName> <File2Name>
 ```
 
 - VIP Note: extension in linus is useless (don't affect file itself), but we use it
-to make name of file Discriptive
+to make name of file Descriptive
 - Example: file.txt , file.mp4 , file.png , file.gz
 -    text          video     photo         zipped
 
@@ -200,7 +212,7 @@ Example:
 mv file11.txt folder2
 ```
 
-- Will copy a file to my distination + renaming copied one to copy.txt
+- Will copy a file to my destination + renaming copied one to copy.txt
 ```
 mv copy.txt  /home/arafat/Desktop/file123.txt
 ```
