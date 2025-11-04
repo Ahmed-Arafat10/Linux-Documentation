@@ -71,7 +71,7 @@
 
 ### **Full Path vs Relative Path**
 
-* **Full Path:** Starts from root `/`
+* **Full (Absolute) Path:** Starts from root `/`
   → `cd /home/ahmed/music`
 * **Relative Path:** From current directory
   → `cd ../../Downloads`
