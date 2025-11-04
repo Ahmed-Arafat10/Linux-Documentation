@@ -1,325 +1,186 @@
-# Session #1
+# **📘 Linux Basics — Session #1**
 
-- Kernel is a computer program that is the heart and core of
-an operating system
-- Kernel is responsible for low-level tasks as disk management,
-memory management and task management.
-````
-  -----------
-  Application
-  -----------
-    Kernal
------------------
-CPU|Memory|Device
------------------
-````
+---
 
-- Why linux ?
-  1. FOSS {free open source software}
-  2. secure
-  3. stability and performance
+## **1. Understanding the Kernel**
 
-- Distribution Of Linux (Distro) is an OS that is formed from a collection of softwares that is based upon the linux kernel.
+* **Kernel** is the **heart and core** of any operating system.
+* It is responsible for **low-level operations** such as:
 
+  * Disk management
+  * Memory management
+  * Task management
 
+### **System Structure Overview**
 
-- Linux File Hierarchy
-````
-                        / ----root
-        /bin     /proc      /boot    /etc   /home     /lib    /var
-    All package             So device       users
-    of system               can open       of system
-
-````
-
-
-## Linux Commands
-
-- Print working directory (your current path)
 ```
-pwd
+  -----------------
+     Application
+  -----------------
+        Kernel
+-------------------------
+ CPU | Memory | Devices
+-------------------------
 ```
-> O/P : /home/arafat
 
+---
 
-- man a manual to help with commands
+## **2. Why Linux?**
+
+1. **FOSS** — Free and Open-Source Software
+2. **Secure** — Strong permission and user system
+3. **Stable and High Performance** — Efficient and reliable under heavy loads
+
+---
+
+## **3. Linux Distribution (Distro)**
+
+> A **Linux Distribution** is an operating system built from a collection of software based on the **Linux kernel**.
+> Examples: Ubuntu, Fedora, Debian, Arch Linux, Red Hat, etc.
+
+---
+
+## **4. Linux File Hierarchy**
+
 ```
+                        /  (root)
+         /bin     /proc     /boot     /etc     /home     /lib     /var
+    System     Device Info  Booting   Config   User Dirs  Libs   Logs/Cache
+   Binaries
+```
+
+* Everything starts from the root `/`
+* Every **file and directory** in Linux is part of a single **tree structure**
+
+---
+
+## **5. Common Linux Commands**
+
+### **Working with Directories**
+
+| Task                   | Command     | Notes                              |
+|------------------------|-------------|------------------------------------|
+| Show current directory | `pwd`       | → `/home/arafat`                   |
+| List contents          | `ls`        | Lists visible files                |
+| List hidden files      | `ls -a`     | Files starting with `.` are hidden |
+| Change directory       | `cd <path>` | Example: `cd /etc`                 |
+| Go back one directory  | `cd ..`     | Example: `/home/ahmed → /home`     |
+| Go to home directory   | `cd ~`      | Shortcut for `/home/user`          |
+
+---
+
+### **Full Path vs Relative Path**
+
+* **Full Path:** Starts from root `/`
+  → `cd /home/ahmed/music`
+* **Relative Path:** From current directory
+  → `cd ../../Downloads`
+
+> `{..}` means parent directory, `.` means current directory.
+
+---
+
+### **Create Directories and Files**
+
+| Task                      | Command                        | Description                      |
+|---------------------------|--------------------------------|----------------------------------|
+| Create directory          | `mkdir <DirName>`              | Creates folder in current path   |
+| Create nested directories | `mkdir -p <Dir1>/<Dir2>`       | Creates parent dirs if not exist |
+| Create file(s)            | `touch <FileName> [File2Name]` | Creates empty files              |
+| Show file type            | `file <FileName>`              | Detects file content type        |
+
+> **Note:** File extensions are not mandatory in Linux.
+> Used only for clarity (e.g., `.txt`, `.png`, `.mp4`, `.gz`).
+
+---
+
+### **Copying and Moving Files**
+
+| Task                     | Command                          | Example                   |
+|--------------------------|----------------------------------|---------------------------|
+| Copy file                | `cp <File> <Destination>`        | `cp test1.txt Documents/` |
+| Copy multiple files      | `cp ./{file1,file2} ./Documents` | Copies several at once    |
+| Copy directory           | `cp -r <FolderFrom> <FolderTo>`  | `-r` = Recursive          |
+| Confirm before overwrite | `cp -i file.txt ./folder1`       | Interactive copy          |
+| Move file                | `mv <File> <Destination>`        | Moves or renames file     |
+| Rename file              | `mv old.txt new.txt`             | Simple rename             |
+
+---
+
+### **Deleting Files and Directories**
+
+| Task                      | Command            | Notes                           |
+|---------------------------|--------------------|---------------------------------|
+| Remove file               | `rm <FileName>`    | Deletes file                    |
+| Ask before deleting       | `rm -i <FileName>` | Interactive deletion            |
+| Remove directory          | `rm -r <DirName>`  | Recursive delete                |
+| Remove empty directory    | `rmdir <DirName>`  | Only if empty                   |
+| Remove all files          | `rm *`             | Deletes all files only          |
+| Remove all (files + dirs) | `rm * -r`          | Deletes everything in directory |
+
+---
+
+## **6. Viewing Files**
+
+| Command       | Description                               | Keys                                |
+|---------------|-------------------------------------------|-------------------------------------|
+| `cat <File>`  | View complete file                        | —                                   |
+| `more <File>` | View file page by page                    | `space`: next, `p`: prev, `q`: quit |
+| `head <File>` | Show first 10 lines                       | `head -n 5 file.txt` = 5 lines      |
+| `tail <File>` | Show last 10 lines                        | `tail -n 5 file.txt` = 5 lines      |
+| `less <File>` | Paginated viewer (faster for large files) | Scroll easily                       |
+| `nano <File>` | Open text editor inside terminal          | `Ctrl+O`: Save, `Ctrl+X`: Exit      |
+
+---
+
+## **7. File Globbing**
+
+> Globbing = Pattern matching for filenames
+
+| Pattern | Example         | Description                       |
+|---------|-----------------|-----------------------------------|
+| `*`     | `rm *.txt`      | Matches all ending with `.txt`    |
+| `?`     | `rm ?oo`        | Matches `a00`, `boo`, `coo`, etc. |
+| `{}`    | `rm file{1..3}` | Removes `file1`, `file2`, `file3` |
+| `[]`    | `rm file[1-3]`  | Same as above                     |
+
+---
+
+## **8. System Info & Utilities**
+
+| Task                      | Command             | Description          |
+|---------------------------|---------------------|----------------------|
+| Show date/time            | `date`              | Displays system date |
+| Show calendar             | `cal`               | Current month        |
+| Show full year calendar   | `cal 1990`          | For any year         |
+| Clear terminal            | `clear` or `Ctrl+L` | Clears screen        |
+| Manual (help) for command | `man <Command>`     | `q` to exit manual   |
+| Short info                | `whatis <Command>`  | One-line description |
+
+---
+
+### **Example:**
+
+```bash
 man ls
-```
-> press `q` button to exit man.
-
-
-- To clean terminal from all commands
-```
-clear 
-```
-> (OR) ```ctrl+L```
-
-
-
-
-- List content of current Directory
-```
-ls
-```
-
-- List content of specific Directory
-```
-ls /home
-```
-
-- List all files/folders {Even hidden file}
-```
-ls -a
-```
-> flag(option) : enhance/improve command
-
-- Note: any file starts with dot (.) means hidden file.
-```
-ls -a /home
-```
-
-- Change Directory
-```
-cd /etc
-```
-
-- Go back one Dir. from your current Dir.
-```
-cd ..
-```
->  /home/ahmed -> /home/
-
-
-Full path vs relative path:
------------------------------
-
-- Full : cd /home/ahmed/music
-> start with / {root} <br>
-> cd ~ {= /home/user}
-
-- Relative : cd music {I'm already in /home/ahmed}
-> cd ../../Download
-
-- {..} is a relative path
-
-- Create Dir. called cd in current Dir. and create Dir. called Test1
-but in previous Dir.
-```
-mkdir cd ../Test1
-```
-
-```
-cd ./Downloads
-```
-> ./Download means from cur. Dir. go to Download
-
-- Open manual for specific command
-```
-man <Command>
-```
-Example:
-```
-man ls
-```
-OR
-```
-whatis <Command>
-```
-Example: 
-```
 whatis ls
 ```
 
-- Show date
-```
-date
-```
+---
 
-- To show calendar of current year
-```
-cal
-```
+## **9. Key Takeaways**
 
-- Show all 12 months pf 1990 year
-```
-cal 1990
-```
+* Everything in Linux is treated as a **file** (even directories, devices, sockets).
+* File extensions are **optional**, not required.
+* Use **flags/options** (`-a`, `-r`, `-p`, `-i`, etc.) to extend command behavior.
+* Learn **manual pages (`man`)** — your built-in documentation.
 
-- To create Dir/Folder
-```
-mkdir <NameOfDir>
-```
+---
 
-- To create Dir. inside Dir. us [-p] flag
-```
-mkdir -p <NameOfDir>
-```
-
-- To create a file
-```
-touch <FileName> <File2Name>
-```
-
-- VIP Note: extension in linus is useless (don't affect file itself), but we use it
-to make name of file Descriptive
-- Example: file.txt , file.mp4 , file.png , file.gz
--    text          video     photo         zipped
-
-- Avoid ><?*#  in file of a file
-- Everything in linux is file, Dir. is specific file
-
-- To show type of a file {whether text,video,image}
-```
-file <FileName>
-```
-
-- Copy a file from a Dir. to another Dir.
-```
-cp <NameOfFile>
-```
-Example: 
-```
-cp test1.txt   Document/folder1/
-```
-
-- To copy multiple files at same time in cur. Dir.
-```
-cp ./{file1,file2}      ./Document
-```
-OR
-```
-cp  file1  file2        ./Document
-```
-
-- To copy one Dir. into another
-```
-cp  -r  <folderFrom> <folderTo>
-```
-> -r :  Recursive
-
-- Will show a confirmation [N/Y], as it will override any other file with same name in Cur. Dir.
-```
-cp -i file.txt ./folder1
-```
-
-- To move a file to specific location
-```
-mv <FileName> <Distination>
-```
-Example: 
-```
-mv file11.txt folder2
-```
-
-- Will copy a file to my destination + renaming copied one to copy.txt
-```
-mv copy.txt  /home/arafat/Desktop/file123.txt
-```
-
-- Rename copy.txt to file123.txt
-```
-mv copy.txt  file123.txt
-```
-
-- To remove a file
-```
-rm <FileName>
-```
-
-- To show a confirmation first
-```
-rm -i <FileName>
-```
-
-- To remove a Dir.
-```
-rm -r <FileName>
-```
-
-- Used to remove empty Dir. only
-```
-rmdir <DirName>
-```
-
-- Remove all files Dir. in Cur. Dir.
-```
-rm * -r
-```
-
-- Remove all files only
-```
-rm *
-```
-
-Command for reading a file:
------------------------------
-
-- To show text in a file
-```
-cat <FileName>
-```
-
-- Show part of text, then you hit enter to show next part and so on , used when file text is large
-```
-more <FileName>
-```
-> space: scroll down <br>
-> p: scroll up <br>
-> q: to quit <br>
-
-- Show first 10 lines
-```
-head <FileName>
-```
-
-- Show first 5 lines
-```
-head <FileName> -n 5
-```
-
-- Show last 10 lines
-```
-tail <FileName>
-```
-
-- Show last 5 lines
-```
-tail <FileName> -n 5
-```
-
-- To write on a file inside terminal
-```
-nano <FileName>
-```
-> ctrl(^) + x : exit <br>
->ctrl(^) + o : write out (Save As) <br>
-
-
-
-File Globeing :
----------------
-
-- Remove any file ends with [.txt]
-```
-rm *.txt
-```
-
-- Remove any file as aoo/boo/coo ...
-```
-rm ?oo
-```
-
-- Remove file1,file2,file3
-```
-rm file{1..3}
-```
-OR
-```
-rm file[1-3]
-```
-
-- Read the content of a text file one page (one screen) at a time. It has faster access because if file is large it doesn’t access the complete file, but accesses it page by page
-```
-less command
-```
+> 🧠 **Tip:**
+> Practice these commands daily inside a Linux terminal or WSL.
+> Combine commands using `&&` to chain actions:
+>
+> ```bash
+> mkdir -p Projects && cd Projects && touch notes.txt
+> ```
